@@ -8,10 +8,10 @@ highlighter:      rouge
 permalink:        /posts/:title/
 
 # User Configuration
-title:            Alex Sikilinda
+title:            'Alex Sikilinda'
 tagline:          'A bootstrap for Jekyll'
 description:      'Poor english zone.'
-url:              http://jekyll-kickstart.gihub.io
+url:              http://sikilinda.com
 baseurl:          '/'
 paginate:         3
 excerpt_separator: '<br>'
@@ -25,12 +25,12 @@ gems:
 # Author Info
 author:
   name:           'Alex Sikilinda'
-  url:            your_web_url
+  url:            'http://sikilinda.com'
 
 # Social Integration
 social:
   twitter:        your_twitter_handle
-  disqus:         your_disqus_id
+  disqus:         sikilinda
   addthis_pubid:  your_addthis_pubid
 
 # Google Analytics Configuration

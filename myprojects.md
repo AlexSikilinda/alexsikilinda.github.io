@@ -1,12 +1,8 @@
 ---
 layout: page
-title: Recommended reading
+title: My Projects
 ---
 
-## Books
+## Piano 3D
 
-Some books here
-
-## Blogs
-
-Some blogs here
+## Irregular Verbs Trainer

@@ -9,7 +9,7 @@ permalink:        /posts/:title/
 
 # User Configuration
 title:            'Alex Sikilinda'
-tagline:          'A bootstrap for Jekyll'
+tagline:          'A programmer''s journey'
 description:      'Poor english zone.'
 url:              http://sikilinda.com
 baseurl:          '/'
@@ -29,7 +29,7 @@ author:
 
 # Social Integration
 social:
-  twitter:        your_twitter_handle
+  twitter:        AlexSikilinda
   disqus:         sikilinda
   addthis_pubid:  ra-56dcb98b76d5a726
 
@@ -41,7 +41,7 @@ google_analytics:
 
 # Github
 github:
-  repo:           your_github_repo
+  repo:           AlexSikilinda
   feedback:       your_github_repo_issues_page_url
 
 # Version Info

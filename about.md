@@ -7,8 +7,6 @@ title: About Me
 
 <br>
 
-{% include follow_me.html %}
-
 ###Something about yourself
 
 Blah blah blah.....

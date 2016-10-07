@@ -74,3 +74,7 @@
 .tag:hover::after {
    border-left-color: #2F4F4F;
 }
+
+.page a {
+  text-decoration: underline;
+}

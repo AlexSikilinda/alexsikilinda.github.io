@@ -48,4 +48,6 @@ Virgin Galactic, Blue Origin etc.
 
 [Twitter](https://twitter.com/AlexSikilinda)
 
+[StackOverflow](http://stackoverflow.com/users/3565910/alex-sikilinda)
+
 alex.sikilinda@gmail.com

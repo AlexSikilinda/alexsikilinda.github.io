@@ -9,7 +9,7 @@ title: About Me
                                           
 ### Who am I?
 
-Hi, my name is Alex Sikilinda. I live in Kharkov, Ukraine.
+Hi, my name is Alex Sikilinda. I live in Kharkov, Ukraine. I am a .NET developer, a little bit musician, a teacher, a student, a geek etc :)
 
 I decided to become a programmer when I was 9, when my brother showed me a Basic program on ZX-Spectrum.
 In school I learned Turbo Pascal visiting additional classes and participating in various programming competitions. 
@@ -39,10 +39,11 @@ Since I develop [my own apps](/myprojects/) there will be a lot of articles abou
 I [play the piano](https://soundcloud.com/alex-sikilinda) and I am learning to play the guitar (mostly electric). Sometimes I pretend to compose music,
 but you aren't gonna hear it, at least yet :)
 I used to play basketball and volleyball, I haven't done it recently though because of my knee injury which I got playing basketball.
+
 One of my passions is space and space technologies in particular, so I am really excited about all these new space-related private companies such as SpaceX, 
 Virgin Galactic, Blue Origin etc.
 
-### How can you contact me?
+### Want to contact me?
 
 [Linkedin](https://www.linkedin.com/in/alexsikilinda?trk=nav_responsive_tab_profile)
 

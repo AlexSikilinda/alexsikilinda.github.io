@@ -10,7 +10,7 @@ analytics: true
 
 <img src='/public/images/StackExchangeMeetup.jpg' alt="stackoverflow meetup"/>
 
-I and Dmitry Obolonyk will be presenting on a meetup today (in russian).
+Me and Dmitry Obolonyk will be presenting on a meetup today (in russian).
 We will review:
 
 * Dapper

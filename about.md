@@ -51,4 +51,4 @@ Virgin Galactic, Blue Origin etc.
 
 [StackOverflow](http://stackoverflow.com/users/3565910/alex-sikilinda)
 
-alex.sikilinda@gmail.com
+[alex.sikilinda@gmail.com](mailto:alex.sikilinda@gmail.com)

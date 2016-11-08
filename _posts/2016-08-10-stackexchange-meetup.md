@@ -32,6 +32,7 @@ Here is the video:
 
 
 Useful links:
+
 * [StackExchange architecture](http://stackexchange.com/performance)
 * [Nick Craver's blog](https://nickcraver.com/)
 * [Mark Gravell's blog](http://blog.marcgravell.com/)

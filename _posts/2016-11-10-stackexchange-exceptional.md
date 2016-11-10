@@ -43,7 +43,7 @@ Pretty handy, isn't it? It is, especially if you also want to send emails on eac
 
 ## StackExchange strikes back
 
-StackExchang team [used to use ELMAH](https://blog.codinghorror.com/exception-driven-development/) (a custom port). At some point they decided to write their own 
+StackExchange team [used to use ELMAH](https://blog.codinghorror.com/exception-driven-development/) (a custom port). At some point they decided to write their own 
 ELMAH with [some improvements](https://nickcraver.com/blog/2012/08/23/keeping-track-of-the-bad-things/).
 
 <img src='/public/images/elmahBlender.jpg' alt="StackExchange blender"/>

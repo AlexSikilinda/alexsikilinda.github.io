@@ -16,11 +16,11 @@ In school I learned Turbo Pascal visiting additional classes and participating i
 After school I started learning software engineering at my local university called [KhNURE](http://nure.ua/). 
 Since then I mostly program in C#. In 2014 I started working as a developer in local software companies and also got my bachelor degree.
 
-I got my first job in a company called ITCraft where I developed ecommerce web solution. The main site was written in ASP.NET MVC 3, but we used a lot of 
+I got my first job in a company called ITCraft where I developed e-commerce web solution. The main site was written in ASP.NET MVC 3, but we used a lot of 
 other technologies such as Web Forms, Endeca (search server), SSIS packages, Windows Services etc. I left ITCraft after about one year not because I didn't like
 the project or the team, but because I wanted to know how software is developed in other companies.
 
-Since then I've been working in a company called Langate as a .NET developer. The project is B2B multi tenant application written using modern stack and hosted in Azure.
+Since then I've been working in a company called Langate as a .NET developer. The project is B2B multi-tenant application written using a modern stack and hosted in Azure.
 Technologies we use: ASP.NET MVC and Web.Api, Azure Storage, Service Bus queues etc.
 
 I also develop [my own projects](/myprojects/) and teach .NET in [BrainAcademy](http://brainacad.kh.ua/).

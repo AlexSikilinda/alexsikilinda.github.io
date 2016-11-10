@@ -6,7 +6,7 @@ title: My Projects
 ## Piano 3D
 Piano 3D is a Windows Store app which has been downloaded more than 600,000 times and [featured in Microsoft TV advertisment](/posts/piano3d-featured-in-MS-advertisment/).
 I am currently in process of creating new UI for this app and also porting it to other platforms. Piano 3D was written using Unity 3D and customized subset of NAudio library.
-3D models were created using Blender. Watch [this](https://www.youtube.com/watch?v=vTFeqLeryrE) and [this](https://www.youtube.com/watch?v=3JhGnCrwEqA) videos to get basic understanding of the app.
+3D models were created using Blender. Watch [this](https://www.youtube.com/watch?v=vTFeqLeryrE) and [this](https://www.youtube.com/watch?v=3JhGnCrwEqA) videos to get a basic understanding of the app.
 
 <img src="/public/images/piano3DmainScreen.jpg" alt="Piano 3D main screen"/>
 

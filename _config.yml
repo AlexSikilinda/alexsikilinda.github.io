@@ -13,7 +13,7 @@ tagline:          'A programmer''s journey'
 description:      'Poor english zone.'
 url:              http://sikilinda.com
 baseurl:          '/'
-paginate:         3
+paginate:         5
 excerpt_separator: '<br>'
 gems:
 - jekyll-mentions

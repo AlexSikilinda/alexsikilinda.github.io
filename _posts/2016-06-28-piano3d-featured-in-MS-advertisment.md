@@ -10,7 +10,7 @@ analytics: true
 
 I am proud to say that my app, Piano 3D, was featured in Microsoft TV advertisment (4th second):
 <div class="videowrapper">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/TMATD2qk564" frameborder="0" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/TMATD2qk564" allowfullscreen></iframe>
 </div>
 
 PS. I'm going to blog about Piano 3D development process, so stay tuned :)

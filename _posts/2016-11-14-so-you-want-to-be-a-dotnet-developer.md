@@ -27,6 +27,11 @@ Class Library. It is essentially a set of .NET types you will use on an everyday
 Of course, you need a framework to write Web applications. ASP.NET MVC is the option here. It is currently the most
 popular framework to write Web applications using .NET.
 
+Check [recommended reading](/recommendedreading) for books about .NET in general.
+For ASP.NET I recommend `Pro ASP.NET MVC 5` by Adam Freeman.
+
+ <img src='/public/images/dotNetDeveloper/proAspNet.jpg' alt="pro asp.net"/>
+
 ## Databases
 
 Databases help to store your data, and relational database knowledge is important for any developer.
@@ -37,6 +42,10 @@ To execute SQL from C# program you can use a technology called ADO.NET, which wa
 
 There are also some libraries which allow you to query and modify database without SQL at all. These are often called
 ORM which is an acronym for Object Relationship Mapping. The one which is widely used in .NET is called EntityFramework.
+
+The classical book is `An introduction to Database System` by Date:
+
+ <img src='/public/images/dotNetDeveloper/dateBook.jpg' alt="database system"/>
 
 ## Computer Science
 

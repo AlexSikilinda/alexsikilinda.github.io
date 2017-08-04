@@ -68,7 +68,7 @@ You can get a free 3-month subscription when you register for Microsoft Dev Esse
 
 There is a science behind the code, so it makes sense to know at least some introductory concepts. You may not write
 sort algorithms (I did it only in my university) and your own data structures, but they are used all the way through the framework.
-Which list implementation do you know? What's the complexity of quick sort? What is a balanced tree? You should be familiar with this concepts.
+Which list implementation do you know? What's the complexity of quick sort? What is a balanced tree? You should be familiar with these concepts.
 
 Everyone recommends `Introduction to Algorithms` by Thomas H. Cormen and others, so do I:
 
@@ -124,7 +124,7 @@ I recommend `ProGit` which you can [download for free from the official git webs
 
 ## Other
 
-English is extremely important. If you are not a native speaker English is the first thing you should learn. New books, blogs, videos, conferences, documentation are all in English, 
+English is extremely important. If you are not a native speaker, English is the first thing you should learn. New books, blogs, videos, conferences, documentation are all in English, 
 so don't limit yourself.
 
 You will be working with other people in a team, so good communications skills are highly desired. Google what soft skills are. 

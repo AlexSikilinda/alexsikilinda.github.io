@@ -9,7 +9,7 @@ title: About Me
                                           
 ### Who am I?
 
-Hi, my name is Alex Sikilinda. I live in Kharkov, Ukraine. I am a .NET developer, a little bit musician, a teacher, a student, a geek etc :)
+Hi, my name is Alex Sikilinda. I live in Kharkov, Ukraine. I am a .NET developer, a teacher, a student, a geek etc :)
 
 I decided to become a programmer when I was 9, when my brother showed me a Basic program on ZX-Spectrum.
 In school I learned Turbo Pascal visiting additional classes and participating in various programming competitions. 

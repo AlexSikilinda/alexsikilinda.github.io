@@ -17,6 +17,7 @@ There are probably dozens of logging solution, and I'm sure there are hundreds t
 you probably won't be able to do it right the first time (and the second, and the third etc). It's better to use existing solution, like [ELMAH](https://elmah.github.io/) ([Scot Hanselman's blog post about it](http://www.hanselman.com/blog/ELMAHErrorLoggingModulesAndHandlersForASPNETAndMVCToo.aspx))
 or [StackExchange.Exceptional](https://github.com/NickCraver/StackExchange.Exceptional).
 <br>
+
 ## What is ELMAH?
 
 ELMAH is an acronym: Error Logging Modules and Handlers. So it is an [ASP.NET HTTP module](https://msdn.microsoft.com/en-us/library/bb398986.aspx) that handles all unhandled exceptions and stores

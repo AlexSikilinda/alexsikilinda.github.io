@@ -9,7 +9,7 @@ title: About Me
                                           
 ### Who am I?
 
-Hi, my name is Alex Sikilinda. I live in Kharkov, Ukraine. I am a .NET developer, a little bit musician, a teacher, a student, a geek etc :)
+Hi, my name is Alex Sikilinda. I live in Kharkov, Ukraine. I am a .NET developer, a teacher, a student, a geek etc :)
 
 I decided to become a programmer when I was 9, when my brother showed me a Basic program on ZX-Spectrum.
 In school I learned Turbo Pascal visiting additional classes and participating in various programming competitions. 
@@ -23,10 +23,10 @@ the project or the team, but because I wanted to know how software is developed 
 Since then I've been working in a company called Langate as a .NET developer. The project is B2B multi-tenant application written using a modern stack and hosted in Azure.
 Technologies we use: ASP.NET MVC and Web.Api, Azure Storage, Service Bus queues etc.
 
-I also develop [my own projects](/myprojects/) and teach .NET in [BrainAcademy](http://brainacad.kh.ua/).
+I also develop [my own projects](/myprojects/) and teach .NET 101 course in [IT Cloud Academy](https://itcloud.academy/).
 
-My professional goal is to get a job in Microsoft or StackOverflow. You may ask "Why these companies?" The answer is quite straightforward: I consider them the best place for .NET developer.
-I am also excited about my app [Piano 3D](/myprojects/) which has been downloaded more than 600,000 times and even [featured in Microsoft TV advertisment](/posts/piano3d-featured-in-MS-advertisment/),
+My current goal is to finish and release my app [Piano 3D](/myprojects/) for Android and iOS. It has already been downloaded more than 700,000 times in Windows Store
+and even [featured in Microsoft TV advertisment](/posts/piano3d-featured-in-MS-advertisment/),
 so I am constantly improving it and want to make it the best mobile piano app.
 
 ### What is this blog about?

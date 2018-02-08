@@ -37,3 +37,4 @@ Useful links:
 * [Nick Craver's blog](https://nickcraver.com/)
 * [Mark Gravell's blog](http://blog.marcgravell.com/)
 * [Stackoverflow's blogs](https://stackoverflow.blog/)
+* [Dmitry Obolonyk's blog post](http://backend-devs.com/blog/archive/meetup-stackoverflow-approach/)

@@ -20,14 +20,12 @@ I got my first job in a company called ITCraft where I developed e-commerce web 
 other technologies such as Web Forms, Endeca (search server), SSIS packages, Windows Services etc. I left ITCraft after about one year not because I didn't like
 the project or the team, but because I wanted to know how software is developed in other companies.
 
-Since then I've been working in a company called Langate as a .NET developer. The project is B2B multi-tenant application written using a modern stack and hosted in Azure.
-Technologies we use: ASP.NET MVC and Web.Api, Azure Storage, Service Bus queues etc.
+After ITCraft I worked in a company called Langate as a .NET developer. The project was B2B multi-tenant application written using a modern stack and hosted in Azure.
+Technologies we used: ASP.NET MVC and Web.Api, Azure Storage, Service Bus queues etc.
 
-I also develop [my own projects](/myprojects/) and teach .NET 101 course in [IT Cloud Academy](https://itcloud.academy/).
+I left Langate in 2018, after 2.5 years, mostly becaue I wanted new challenges. I've been working on my own app, [Piano 3D](https://piano3d.com), after I left. You can check the list of all my projects [here](/myprojects/).
 
-My current goal is to finish and release my app [Piano 3D](/myprojects/) for Android and iOS. It has already been downloaded more than 700,000 times in Windows Store
-and even [featured in Microsoft TV advertisment](/posts/piano3d-featured-in-MS-advertisment/),
-so I am constantly improving it and want to make it the best mobile piano app.
+I used to teach .NET 101 course in [IT Cloud Academy](https://itcloud.academy/).
 
 ### What is this blog about?
 
@@ -40,10 +38,9 @@ I [play the piano](https://soundcloud.com/alex-sikilinda) and I am learning to p
 but you aren't gonna hear it, at least yet :)
 I used to play basketball and volleyball, I haven't done it recently though because of my knee injury which I got playing basketball.
 
-One of my passions is space and space technologies in particular, so I am really excited about all these new space-related private companies such as SpaceX, 
-Virgin Galactic, Blue Origin etc.
+One of my passions is space and space technologies in particular, so I am really excited about all these new space-related private companies such as SpaceX, Virgin Galactic, Blue Origin etc.
 
-### Want to contact me?
+### Get in touch
 
 [Linkedin](https://www.linkedin.com/in/alexsikilinda?trk=nav_responsive_tab_profile)
 

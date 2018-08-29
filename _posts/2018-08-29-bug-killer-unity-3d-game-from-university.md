@@ -7,7 +7,7 @@ comments: true
 analytics: true
 ---
 
-<img src='/public/images/bugkiller/bug-killer-main-image.jpg' alt="bug killer main level"/>
+<img src='/public/images/BugKiller/bug-killer-main-image.jpg' alt="bug killer main level"/>
 Recently I remembered that there was a game we made with my groupmates on the 3rd year of university (5 years ago!), and, guess what, it is still in my private git repo so I cloned and built it (surprisingly successfully). Then I decided to write a post about the game because it's not really fun to play, but, it's fun to review the screenshots and remember how it was created.
 <br>
 
@@ -23,12 +23,12 @@ The game was named "Bug Killer".
 
 The first thing a user sees is the main menu, so a girl from our team painted a background image with two characters shooting in a bug in the office. 
 
-<img src='/public/images/bugkiller/bug-killer-main-menu.jpg' alt="bug killer main menu"/>
+<img src='/public/images/BugKiller/bug-killer-main-menu.jpg' alt="bug killer main menu"/>
 
 We didn't have much time and Unity only had the old "OnGUI" option to create UI so it's quite simple, only two buttons, "New Game" and "Quit Game".
 If a user still wants to play and selects "New Game" option we ask him to select the character:
 
-<img src='/public/images/bugkiller/bug-killer-character-selection.jpg' alt="bug killer character selection"/>
+<img src='/public/images/BugKiller/bug-killer-character-selection.jpg' alt="bug killer character selection"/>
 
 Can't you see this beautiful red office door? I created it by myself in Blender and I'm still kinda proud of it.
 
@@ -39,14 +39,14 @@ Once a user has selected his alter ego he shows up in the office. On the first f
 It is not mandatory to complete the first level, but if you do this you will get a weapon upgrade.
 
 This is how the second level looks:
-<img src='/public/images/bugkiller/bug-killer-second-level.jpg' alt="bug killer second level"/>
+<img src='/public/images/BugKiller/bug-killer-second-level.jpg' alt="bug killer second level"/>
 
 Bugs folow you once they can see you and they bite you if they manage to reach you. If you lose all your health point and you get your blue screen of death:
 
-<img src='/public/images/bugkiller/bug-killer-death-screen.jpg' alt="bug killer blue death screen"/>
+<img src='/public/images/BugKiller/bug-killer-death-screen.jpg' alt="bug killer blue death screen"/>
 
 But if you manage to survive and kill the main boss (appears on the second floor with all that images) you get the credits scene:
 
-<img src='/public/images/bugkiller/bug-killer-you-win-screen.jpg' alt="bug killer win screen"/>
+<img src='/public/images/BugKiller/bug-killer-you-win-screen.jpg' alt="bug killer win screen"/>
 
 Not sure this post is really useful for public, but it's certainly fun for me to remember the development process and I am even going to discuss some serious technical things from this game in the next post, so stay tuned :)

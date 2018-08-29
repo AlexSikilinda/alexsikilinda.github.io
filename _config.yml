@@ -11,7 +11,7 @@ permalink:        /posts/:title/
 title:            'Alex Sikilinda'
 tagline:          'A programmer''s journey'
 description:      'Poor english zone.'
-url:              http://sikilinda.com
+url:              https://sikilinda.com
 baseurl:          '/'
 paginate:         5
 excerpt_separator: '<br>'

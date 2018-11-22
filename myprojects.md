@@ -24,9 +24,18 @@ Written using Unity 3D and customized subset of NAudio library.
     <img src="https://assets.windowsphone.com/85864462-9c82-451e-9355-a3d5f874397a/English_get-it-from-MS_InvariantCulture_Default.png" alt="Get it from Microsoft" width="200px" style="margin:auto;"/>
 </a>
 
+## Do Did Done - Learn English Irregular Verbs
+New version of Irregular Verbs Trainer updated to Windows 10. Helps users to learn English irregular verbs. Has three exercies: flipping card, multiple-choice and writing tests.
+
+<img src="/public/images/doDidDoneMainScreen.jpeg" alt="do did done windows store main page"/>
+
+<a href="https://www.microsoft.com/en-us/p/dodiddone-learn-english-irregular-verbs/9phbj68wxd4k?activetab=pivot%3Aoverviewtab">
+    <img src="https://assets.windowsphone.com/85864462-9c82-451e-9355-a3d5f874397a/English_get-it-from-MS_InvariantCulture_Default.png" alt="Get it from Microsoft" width="200px" style="margin:auto;"/>
+</a>
+
 ## Irregular Verbs Trainer
 When I started learning English there wasn't a suitable app for learning irregular verbs in Windows Store. So I decided to create one. It was written in C# using MVVM approach (Prism library).
-It allows a user to easily find all three forms and also has some exercises.
+It allows a user to easily find all three forms and also has some exercises. Eventually has transformed into new app called "Do Did Done".
 
 <img src="/public/images/irregularVerbsTrainer.png" alt="Irregular Verb Trainer main screen"/>
 

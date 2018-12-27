@@ -11,7 +11,7 @@ analytics: true
 
 [Open in full resolution.](/public/images/mindmaps/LINQ.jpg)
 
-More mind maps which can be usefull for .NET learners. 
+More mind maps which can be useful for .NET learners. 
 
 LINQ is an important topic, and understanding its concepts is crucial.
 
@@ -26,12 +26,16 @@ with all collection classes.
 
 Due to the nature of `IEnumerator<T>`, LINQ methods returning `IEnumerable<T>` have a concept of **lazy (also called deferred) execution**.
 
-All generic methods in C#, including LINQ, can **implicitly infere type arguments**,
+All generic methods in C#, including LINQ, can **implicitly infer type arguments**,
 thus we do not need to specify them in most cases.
 
 Another important topic in LINQ world is **delegates**. Delegates are types representing references to methods. Majority of LINQ methods accept `Func<...>` delegates.
 Most common option to provide a delegate is to write a **lambda expression** (or statement).
 It's important to understand that lambda expressions can capture outer variables (a.k.a. closures).
+
+We also should be aware that if you work with `IQueryable<T>` interface, the **query is compiled** (for example in SQL) and executed remotely.
+
+There are methods for filtering, projecting, joining, ordering, grouping, conversion, set operators, element operators, aggregation, quantifiers, and generation.
 
 
 

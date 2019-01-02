@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "6 lines quicksort in C#"
+title:  "6 lines long quicksort in C#"
 date:   2019-01-02 00:00:01
 tags: .Net Functional C# LINQ
 comments: true

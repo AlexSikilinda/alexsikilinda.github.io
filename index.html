@@ -24,7 +24,6 @@ title: Home
 
     <a href="{{ post.url }}"> &gt;&gt;&gt; Continue reading &lt;&lt;&lt; </a>
   </div>
-  {% endfor %}
 
   <script
     async
@@ -44,6 +43,8 @@ title: Home
     (adsbygoogle = window.adsbygoogle || []).push({});
   </script>
 </div>
+
+{% endfor %}
 
 <div class="pagination">
   {% if paginator.next_page %}

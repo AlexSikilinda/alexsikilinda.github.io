@@ -66,13 +66,13 @@
 }
 
 .tag:hover {
-  background-color: #2F4F4F;
+  background-color: #001f28;
 	text-decoration: none !important;
   color: white !important;
 }
 
 .tag:hover::after {
-   border-left-color: #2F4F4F;
+   border-left-color: #001f28;
 }
 
 .page a {

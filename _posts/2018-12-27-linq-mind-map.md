@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "LINQ mind maps"
-date:   2018-12-27 00:00:01
-tags: .Net Mindmaps
+title: "LINQ mind maps"
+date: 2018-12-27 00:00:01
+tags: .Net Mindmaps LINQ
 comments: true
 analytics: true
 ---
@@ -11,7 +11,7 @@ analytics: true
 
 [Open in full resolution.](/public/images/mindmaps/LINQ.jpg)
 
-More mind maps which can be useful for .NET learners. 
+More mind maps which can be useful for .NET learners.
 
 LINQ is an important topic, and understanding its concepts is crucial.
 
@@ -20,7 +20,7 @@ LINQ is an important topic, and understanding its concepts is crucial.
 [Open in full resolution.](/public/images/mindmaps/linqMethods.jpg)
 
 LINQ is built around `IEnumerable<T>` and `IEnumerator<T>` interfaces.
-It is implemented as extension generic methods which allows us to use it 
+It is implemented as extension generic methods which allows us to use it
 with all collection classes.
 <br>
 
@@ -36,6 +36,3 @@ It's important to understand that lambda expressions can capture outer variables
 We also should be aware that if you work with `IQueryable<T>` interface, the **query is compiled** (for example in SQL) and executed remotely.
 
 There are methods for filtering, projecting, joining, ordering, grouping, conversion, set operators, element operators, aggregation, quantifiers, and generation.
-
-
-

@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  ".NET Collections mind map"
-date:   2018-12-25 00:00:01
-tags: .Net Mindmaps
+title: ".NET Collections mind map"
+date: 2018-12-25 00:00:01
+tags: .Net Mindmaps LINQ
 comments: true
 analytics: true
 ---

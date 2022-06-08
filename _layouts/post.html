@@ -2,29 +2,49 @@
 layout: default
 ---
 
-<div class="post">
+<article class="post">
   <span class="post-date">{{ page.date | date_to_string }}</span>
   <h1 class="post-title">{{ page.title }}</h1>
   <ul class="tags">
     {% for tag in page.tags %}
-      <li><a href="/tags/#{{tag}}" class="tag">{{ tag }}</a></li>
+    <li><a href="/tags/#{{tag}}" class="tag">{{ tag }}</a></li>
     {% endfor %}
   </ul>
   {{ content }}
+</article>
+
+<div class="ad-unit">
+  <script
+    async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9473764925202086"
+    crossorigin="anonymous"
+  ></script>
+  <!-- Blogs AD -->
+  <ins
+    class="adsbygoogle"
+    style="display: block"
+    data-ad-client="ca-pub-9473764925202086"
+    data-ad-slot="9842288662"
+    data-ad-format="auto"
+    data-full-width-responsive="true"
+  ></ins>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
 </div>
 
 <div class="related">
   <h2>Related Posts</h2>
   <ul class="related-posts">
     {% for post in site.related_posts limit:3 %}
-      <li>
-        <h3>
-          <a href="{{ post.url }}">
-            {{ post.title }}
-            <small>{{ post.date | date_to_string }}</small>
-          </a>
-        </h3>
-      </li>
+    <li>
+      <h3>
+        <a href="{{ post.url }}">
+          {{ post.title }}
+          <small>{{ post.date | date_to_string }}</small>
+        </a>
+      </h3>
+    </li>
     {% endfor %}
   </ul>
 </div>

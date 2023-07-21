@@ -10,7 +10,7 @@ permalink: /posts/:title/
 # User Configuration
 title: "Alex Sikilinda"
 tagline: "A programmer's journey"
-description: "Poor english zone."
+description: "Shipping software, mostly with .NET"
 url: https://sikilinda.com
 baseurl: "/"
 paginate: 5
@@ -27,7 +27,7 @@ plugins: [jekyll-paginate]
 # Author Info
 author:
   name: "Alex Sikilinda"
-  url: "http://sikilinda.com"
+  url: "https://sikilinda.com"
 
 # Social Integration
 social:

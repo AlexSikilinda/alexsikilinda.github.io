@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Piano 3D released worldwide on iOS and Android"
-date:   2018-07-30 00:00:00
-tags: .Net Unity3D Piano3D
+title: "Piano 3D released worldwide on iOS and Android"
+date: 2018-07-30 00:00:00
+tags: .NET Unity3D Piano3D
 comments: true
 analytics: true
 ---
@@ -17,15 +17,15 @@ Today we are talking about the history.
 
 ## Piano 3D Timeline
 
-* April 2014 - first commit in git
-* April 2014 - first release in Windows Store
-* May 2014 - scrolling and scaling added
-* May 2014 - started working on tutorials
-* June 2014 - new interface using new Unity UI
-* August 2014 - synth added
-* June 2015 - fifth release for Windows Store
-* September 2016 - started working on new UI for iOS and Android
-* July 2018 - worldwide release for iOS and Android
+- April 2014 - first commit in git
+- April 2014 - first release in Windows Store
+- May 2014 - scrolling and scaling added
+- May 2014 - started working on tutorials
+- June 2014 - new interface using new Unity UI
+- August 2014 - synth added
+- June 2015 - fifth release for Windows Store
+- September 2016 - started working on new UI for iOS and Android
+- July 2018 - worldwide release for iOS and Android
 
 ## The History
 
@@ -42,7 +42,7 @@ Here is the first version of the app:
 
 <img src='/public/images/piano-3d-windows-8-mainscreen.jpg' alt="windows 8 piano 3d">
 
-The only two functions were scrolling and changing sounds. The UI was build using "Metro" XAML which communicated with Unity by means of delegates invocation. 
+The only two functions were scrolling and changing sounds. The UI was build using "Metro" XAML which communicated with Unity by means of delegates invocation.
 
 People started downloading the app, like, a lot. At some point it had more than 1000 daily downloads which was a surprise for me.
 Moreover, there was an IAP which unlocked Guitar sound and users started to buy it, which was an even bigger surprise for me.
@@ -57,7 +57,7 @@ The second version of Piano 3D looked smth like this:
 
 ### Some experiments with no results
 
-There is a couple of features I implemented at that time which didn't end up in the second release, but still worth mentioning. The first one was MIDI support. Fun fact: Windows 8 didn't support midi for x32 applications and unity didn't support building for x64 architecture, so I spent a couple of days trying to find this issue. Fortunately, Windows 10 supports both x32 and x64 for MIDI IO. 
+There is a couple of features I implemented at that time which didn't end up in the second release, but still worth mentioning. The first one was MIDI support. Fun fact: Windows 8 didn't support midi for x32 applications and unity didn't support building for x64 architecture, so I spent a couple of days trying to find this issue. Fortunately, Windows 10 supports both x32 and x64 for MIDI IO.
 
 The second one was even more interesting: AR. A friend of mine has got a device called LEAP motion which allowed to track hands position. They had Unity SDK, so enabling it wasn't a big problem.
 
@@ -80,5 +80,3 @@ Here it the released version:
 ### Download and subscribe
 
 Download [iOS version](https://itunes.apple.com/app/id1402994766) and [Android version](https://play.google.com/store/apps/details?id=com.MobilrKingdom.Piano3D). Subscribe and like on [Instagram](http://instagram.com/piano3dapp), [YouTube](https://www.youtube.com/channel/UC9MOkgEEoZUGpnM8B3MsYeA), [Facebook](https://www.facebook.com/piano3d) and [Twitter](https://twitter.com/piano3d).
-
-

@@ -2,7 +2,7 @@
 layout: post
 title: ".ConfigureAwait(false) in ASP.NET Core applications"
 date: 2023-07-21 00:00:01
-tags: .Net C# ASP.NET
+tags: .NET C# ASP.NET
 comments: true
 analytics: true
 ---

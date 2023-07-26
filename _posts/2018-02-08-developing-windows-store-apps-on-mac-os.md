@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Developing Universal Windows Apps on Mac OS"
-date:   2018-02-08 12:22:00
-tags: .Net UWP MacOS
+title: "Developing Universal Windows Apps on Mac OS"
+date: 2018-02-08 12:22:00
+tags: .NET UWP MacOS
 comments: true
 analytics: true
 ---
@@ -15,7 +15,7 @@ Irregural Verbs Trainer is a great app, but users do not use it. I have got only
 
 So I decided to switch from Piano 3D development and other thoughts in my head and ship a new version of Irregural Verbs Trainer in short period of time (no more than 2 days).
 
-There is one small problem though: *I do not have Windows PC, only MacBook with MacOS*.
+There is one small problem though: _I do not have Windows PC, only MacBook with MacOS_.
 <br>
 
 Well, I lied. I do have Windows laptop, but it is sooooo slow I can literally run to a store and buy a new Windows laptop while it is building my not-even-close-to-big application. Frankly speaking I started to think about new Dell XPS 13, but I'm in a kind of limited financial situation, and spending 1.5k$ on new laptop just to get Windows machine doesn't sound appealing, especially owning a top noth MacBook. But no, I do not want to install Windows in dual boot. This leaves us with virtual machine option. But I am lazy, and installing Windows even on a virtual machine is too hard.

@@ -2,7 +2,7 @@
 layout: post
 title: "LINQ mind maps"
 date: 2018-12-27 00:00:01
-tags: .Net Mindmaps LINQ
+tags: .NET Mindmaps LINQ
 comments: true
 analytics: true
 ---

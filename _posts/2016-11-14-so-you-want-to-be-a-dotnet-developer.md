@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "So you want to be a .NET web developer?"
-date:   2016-11-14 12:22:00
-tags: .Net
+title: "So you want to be a .NET web developer?"
+date: 2016-11-14 12:22:00
+tags: .NET
 comments: true
 analytics: true
 ---
@@ -10,12 +10,12 @@ analytics: true
 <img src='/public/images/dotNetDeveloper.png' alt="web .net developer"/>
 
 I decided to write a post about skills IMHO a person should have to get a job as a .NET web developer.
-Well, the mindmap above contains everything I wanted to say, so let's just review it. I also will try to 
+Well, the mindmap above contains everything I wanted to say, so let's just review it. I also will try to
 give some recommendations about resources and books you can use to improve your knowledge in particular area.
 
 ## .NET
 
-It's obvious that each .NET develop should know .NET fundamentals (CLR, CTS, JIT). I don't say you have to know 
+It's obvious that each .NET develop should know .NET fundamentals (CLR, CTS, JIT). I don't say you have to know
 internals of JIT compiler, but it's essential to have high-level understanding of this concepts.
 <br>
 Although .NET framework supports various programming languages, C# is de facto the standard, so I highly recommend to
@@ -87,14 +87,15 @@ Your applications are gonna use networks, so you better know what OSI model is, 
 
 Again, these are big books, but it is the basics, so you should at least start reading these books and try to not stop.
 
-## Web 
+## Web
+
 There are so many concepts and frameworks connected to WEB development, so it would be hard to enumerate all of them.
 Still, there are some core concepts:
 
-* HTML, CSS
-* Protocols (HTTP, DNS, TCP/IP)
-* Javascript, jQuery, AngularJS
-* Data formats (JSON, XML)
+- HTML, CSS
+- Protocols (HTTP, DNS, TCP/IP)
+- Javascript, jQuery, AngularJS
+- Data formats (JSON, XML)
 
 There are so many books and materials about these topics so it's kind of meaningless to give any advice.
 Just google the topic you are interested in and stick to the learning path.
@@ -121,13 +122,9 @@ I recommend `ProGit` which you can [download for free from the official git webs
 
 <img src='/public/images/dotNetDeveloper/proGit.png' alt="pro git book"/>
 
-
 ## Other
 
-English is extremely important. If you are not a native speaker, English is the first thing you should learn. New books, blogs, videos, conferences, documentation are all in English, 
+English is extremely important. If you are not a native speaker, English is the first thing you should learn. New books, blogs, videos, conferences, documentation are all in English,
 so don't limit yourself.
 
-You will be working with other people in a team, so good communications skills are highly desired. Google what soft skills are. 
-
-
-
+You will be working with other people in a team, so good communications skills are highly desired. Google what soft skills are.

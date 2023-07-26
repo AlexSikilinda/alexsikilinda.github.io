@@ -1,15 +1,15 @@
 ---
 layout: post
-title:  "6 lines long quicksort in C#"
-date:   2019-01-02 00:00:01
-tags: .Net Functional C# LINQ
+title: "6 lines long quicksort in C#"
+date: 2019-01-02 00:00:01
+tags: .NET Functional C# LINQ
 comments: true
 analytics: true
 ---
 
 <script src="https://gist.github.com/AlexSikilinda/15732c0973198e911c1fe23183cee448.js"></script>
 
-That's it. Well, this is not very efficient, and shouldn't be used in real-world scenarios, 
+That's it. Well, this is not very efficient, and shouldn't be used in real-world scenarios,
 but it shows how powerful LINQ can be.
 
 We compare this code with imperative version and even with Haskell below.

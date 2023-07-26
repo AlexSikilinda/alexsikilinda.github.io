@@ -2,7 +2,7 @@
 layout: post
 title: "Multiple Swagger definitions in the same .NET project"
 date: 2023-07-14 00:00:01
-tags: .Net C#
+tags: .NET C#
 comments: true
 analytics: true
 ---

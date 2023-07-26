@@ -2,7 +2,7 @@
 layout: post
 title: "Nullable reference types and model binding in ASP.NET"
 date: 2022-07-03 00:00:01
-tags: .Net ASP.NET C#
+tags: .NET ASP.NET C#
 comments: true
 analytics: true
 ---
@@ -19,13 +19,14 @@ Let's create a new ASP.NET 6 application and check the default `WeatherForecast`
 {% highlight csharp %}
 public class WeatherForecast
 {
-    public DateTime Date { get; set; }
+public DateTime Date { get; set; }
 
     public int TemperatureC { get; set; }
 
     public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
 
     public string? Summary { get; set; }
+
 }
 {% endhighlight %}
 
@@ -33,7 +34,7 @@ As you can see, `Summary`'s type is `string?` which didn't make sense before C# 
 
 Let's try to change `Summary`'s type from `string?` to just `string`. The first thing we notice - there's a new compiler warning:
 
-> Warning	CS8618	Non-nullable property 'Summary' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+> Warning CS8618 Non-nullable property 'Summary' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
 
 What happens here? C# compiler sees that `Summary` field is not marked as nullable, but there is no default value, and there is no constructor which initializes the property. This means that if you create an instance of type `WeatherForecast`, the default value of `Summary` will be null. Which violates the "non-nullable" rule.
 
@@ -43,7 +44,7 @@ Let's ignore the warning for now, and create a new POST method accepting `Weathe
 [HttpPost(Name = "UpdateWeatherForecast")]
 public IActionResult UpdateWeatherForecast(WeatherForecast weatherForecast)
 {
-    return Ok("Updated");
+return Ok("Updated");
 }
 {% endhighlight %}
 
@@ -51,7 +52,7 @@ Run the app, open the swagger page and try to make a request without `Summary`:
 
 <img src='/public/images/SummaryPostResponse.png' alt="ASP.NET consider non nullable fields as required in model binding"/>
 
-As you can see, ASP.NET is smart enough to figure out that `Summary` field is required (because it is not nullable), and we are getting 400 Bad Request with `The Summary field is required.` error. Basically, it implicitly adds `[Required]` attribute to all non-nullable reference types. This is default behaviour since ASP.NET Core 3, and you can disable it with an MvcOption called [SuppressImplicitRequiredAttributeForNonNullableReferenceTypes](https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.mvc.mvcoptions.suppressimplicitrequiredattributefornonnullablereferencetypes?view=aspnetcore-6.0). 
+As you can see, ASP.NET is smart enough to figure out that `Summary` field is required (because it is not nullable), and we are getting 400 Bad Request with `The Summary field is required.` error. Basically, it implicitly adds `[Required]` attribute to all non-nullable reference types. This is default behaviour since ASP.NET Core 3, and you can disable it with an MvcOption called [SuppressImplicitRequiredAttributeForNonNullableReferenceTypes](https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.mvc.mvcoptions.suppressimplicitrequiredattributefornonnullablereferencetypes?view=aspnetcore-6.0).
 
 ## The warning
 
@@ -60,12 +61,12 @@ But what if we, like all good developers, don't want to have any warnings in our
 {% highlight csharp %}
 public class WeatherForecast
 {
-    public WeatherForecast(DateTime date, int temperatureC, string summary)
-    {
-        Date = date;
-        TemperatureC = temperatureC;
-        Summary = summary;
-    }
+public WeatherForecast(DateTime date, int temperatureC, string summary)
+{
+Date = date;
+TemperatureC = temperatureC;
+Summary = summary;
+}
 
     public DateTime Date { get; set; }
 
@@ -74,6 +75,7 @@ public class WeatherForecast
     public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
 
     public string Summary { get; set; }
+
 }
 {% endhighlight %}
 
@@ -85,24 +87,22 @@ C# 9.0 [introduces](https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/csh
 
 {% highlight csharp %}
 public record WeatherForecast(
-    DateTime Date, 
-    int TemperatureC, 
-    string Summary)
+DateTime Date,
+int TemperatureC,
+string Summary)
 {
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
+public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
 }
 {% endhighlight %}
 
 And guess what? ASP.NET Model Binding is able to deserialize these new records, so you can use them as action parameters!
-Much better, isn't it? 
+Much better, isn't it?
 
 ## Summary (and tips)
 
-* Enabling the nullable reference type feature is a potential breaking change in existing ASP.NET projects since `[Required]` attribute will be added implicitly to nullable reference types by default.
-* New projects are created with the feature enabled.
-* Try to embrace and use new nullable reference type approach, it will save a lot of time in future;
-* Do not ignore compiler warnings, they are almost always useful. Consider establishing zero warnings policy for high-quality code.
-* Consider using new C# 9.0 **records** as parameters instead of classes.
-* [Read more](https://docs.microsoft.com/en-us/aspnet/core/mvc/models/model-binding?view=aspnetcore-6.0) about model binding in ASP.NET.
-
-
+- Enabling the nullable reference type feature is a potential breaking change in existing ASP.NET projects since `[Required]` attribute will be added implicitly to nullable reference types by default.
+- New projects are created with the feature enabled.
+- Try to embrace and use new nullable reference type approach, it will save a lot of time in future;
+- Do not ignore compiler warnings, they are almost always useful. Consider establishing zero warnings policy for high-quality code.
+- Consider using new C# 9.0 **records** as parameters instead of classes.
+- [Read more](https://docs.microsoft.com/en-us/aspnet/core/mvc/models/model-binding?view=aspnetcore-6.0) about model binding in ASP.NET.

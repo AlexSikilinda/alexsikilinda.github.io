@@ -2,7 +2,7 @@
 layout: post
 title: "'dotnet swagger tofile' command fails with 'incorrect runtime' error"
 date: 2022-06-08 00:00:01
-tags: .Net Swagger OpenAPI Quickfix
+tags: .NET Swagger OpenAPI Quickfix
 comments: true
 analytics: true
 ---
@@ -37,10 +37,10 @@ The solution here is to add [**global.json**](https://docs.microsoft.com/en-us/d
 
 {% highlight json %}
 {
-  "sdk": {
-    "version": "5.0.406",
-    "rollForward": "latestPatch"
-  }
+"sdk": {
+"version": "5.0.406",
+"rollForward": "latestPatch"
+}
 }
 {% endhighlight %}
 
@@ -48,9 +48,9 @@ This file will instruct .NET CLI to use version 5.0.406 or a bigger minor versio
 
 ## Useful tips
 
-* check your `.config/dotnet-tools.json` tools-manifest file, to see which `Swashbuckle.AspNetCore.Cli` version is used
-* try updating `Swashbuckle.AspNetCore.Cli` to the latest version available
-* update all the `Swachbuckle` nuget packages
-* use `dotnet --info` command to check the .NET CLI version used
-* use `dotnet --list-sdks` to list all installed SDKs
-* update your project to the latest .NET version
+- check your `.config/dotnet-tools.json` tools-manifest file, to see which `Swashbuckle.AspNetCore.Cli` version is used
+- try updating `Swashbuckle.AspNetCore.Cli` to the latest version available
+- update all the `Swachbuckle` nuget packages
+- use `dotnet --info` command to check the .NET CLI version used
+- use `dotnet --list-sdks` to list all installed SDKs
+- update your project to the latest .NET version

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "MyGet outage"
-date: 2023-07-26 00:00:01
+date: 2023-07-27 00:00:01
 tags: SaaS DevOps
 comments: true
 analytics: true

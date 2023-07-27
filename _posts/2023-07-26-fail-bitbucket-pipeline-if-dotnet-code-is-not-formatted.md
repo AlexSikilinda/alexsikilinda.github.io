@@ -2,7 +2,7 @@
 layout: post
 title: "Fail Bitbucket Pipeline if .NET code is not formatted"
 date: 2023-07-26 00:00:01
-tags: .NET C# Bitbucket
+tags: .NET C# Bitbucket DevOps
 comments: true
 analytics: true
 ---

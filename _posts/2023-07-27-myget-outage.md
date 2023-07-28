@@ -46,7 +46,7 @@ First of all, there are two types of private feed solutions: self-hosted and Saa
 
 That leaves us with SaaS solutions. Given our current experience with MyGet, we probably want a big company with great support behind it. My options here are:
 
-- Azure Artifacts
+- [Azure Artifacts](https://sikilinda.com/posts/how-to-push-nuget-packages-to-azure-artifacts-from-bitbucket-pipelines/)
 - GitHub package registry
 - GitLab Package Registry
 - AWS CodeArtifact

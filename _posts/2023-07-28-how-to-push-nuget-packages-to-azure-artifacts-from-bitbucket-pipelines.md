@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "How to push NuGet packages from Bitbucket Pipelines to Azure Artifacts"
+title: "How to push NuGet packages to Azure Artifacts from Bitbucket Pipelines"
 date: 2023-07-28 00:00:01
 tags: DevOps Bitbucket NuGet
 comments: true

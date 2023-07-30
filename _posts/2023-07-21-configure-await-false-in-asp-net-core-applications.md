@@ -30,7 +30,7 @@ The purpose of this article is to provide a set of useful links and quotes to sh
 >
 > <cite>[ASP.NET Core SynchronizationContext](https://blog.stephencleary.com/2017/03/aspnetcore-synchronization-context.html)</cite> by Stephen Cleary
 
-## Why we need .ConfigureAwait(false) in the "old" ASP.NET?
+## Why do we need .ConfigureAwait(false) in the "old" ASP.NET?
 
 Actually, we do not:
 

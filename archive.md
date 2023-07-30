@@ -5,19 +5,10 @@ title: Archive
 
 <!-- ## Blog Posts -->
 
-<!-- {% for post in site.posts %}
-  * {{ post.date | date_to_string }} &raquo; [ {{ post.title }} ]({{ post.url }})
-{% endfor %} -->
-
 {% for post in site.posts %}
-<ul class="tags">
-  {% for tag in post.tags %}
-    <li><a href="/tags/#{{tag}}" class="tag">{{ tag }}</a></li>
-  {% endfor %}
-</ul>
-<div>
-  <span style="float: left;"><a href="{{ post.url }}">{{ post.title }}</a></span>
-  <span style="float: right;">{{ post.date | date_to_string }}</span>
-</div>
-<div style="clear: both;"></div>​
+<p>
+
+  <span class="post-date">{{ post.date | date_to_string }}</span> <a class="post-title post-link" href="{{ post.url }}">{{ post.title }}</a>
+
+</p>
 {% endfor %}

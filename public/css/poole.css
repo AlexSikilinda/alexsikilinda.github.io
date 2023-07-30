@@ -344,10 +344,15 @@ tbody tr:nth-child(odd) th {
 .post-title,
 .post-title a {
   color: white !important;
+  font-family: "Space Grotesk", sans-serif;
 }
 .page-title,
 .post-title {
   margin-top: 0;
+}
+
+.post-link {
+  font-weight: bold;
 }
 
 /* Meta data line below post title */

@@ -13,7 +13,6 @@
  * https://github.com/poole/hyde.
  */
 
-
 /*
  * Contents
  *
@@ -24,7 +23,6 @@
  * Themes
  */
 
-
 /*
  * Global resets
  *
@@ -32,7 +30,7 @@
  */
 
 html {
-  font-family: "PT Sans", Helvetica, Arial, sans-serif;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
 }
 @media (min-width: 48em) {
   html {
@@ -45,7 +43,6 @@ html {
   }
 }
 
-
 /*
  * Sidebar
  *
@@ -56,8 +53,10 @@ html {
 .sidebar {
   text-align: center;
   padding: 2rem 1rem;
-  color: rgba(255,255,255,.5);
+  color: rgba(255, 255, 255, 0.5);
   background-color: #202020;
+  border-radius: 50px;
+  margin: 20px;
 }
 @media (min-width: 48em) {
   .sidebar {
@@ -79,8 +78,9 @@ html {
 .sidebar-about h1 {
   color: #fff;
   margin-top: 0;
-  font-family: "Abril Fatface", serif;
+  font-family: "Space Grotesk", sans-serif;
   font-size: 3.25rem;
+  line-height: 1;
 }
 
 /* Sidebar nav */
@@ -108,12 +108,11 @@ a.sidebar-nav-item:focus {
 @media (min-width: 48em) {
   .sidebar-sticky {
     position: absolute;
-    right:  1rem;
+    right: 1rem;
     bottom: 1rem;
-    left:   1rem;
+    left: 1rem;
   }
 }
-
 
 /* Container
  *
@@ -122,7 +121,7 @@ a.sidebar-nav-item:focus {
  */
 
 .content {
-  padding-top:    4rem;
+  padding-top: 4rem;
   padding-bottom: 4rem;
 }
 
@@ -140,7 +139,6 @@ a.sidebar-nav-item:focus {
     margin-right: 4rem;
   }
 }
-
 
 /*
  * Reverse layout
@@ -165,8 +163,6 @@ a.sidebar-nav-item:focus {
     margin-right: 22rem;
   }
 }
-
-
 
 /*
  * Themes
@@ -250,9 +246,14 @@ a.sidebar-nav-item:focus {
 }
 
 .customTheme .sidebar {
-  background-color: #001f28;
+  background-color: #19064987;
+  background: linear-gradient(
+    45deg,
+    rgba(25, 6, 73, 0.5) 20%,
+    rgba(133, 82, 208, 0.5) 100%
+  );
 }
 .customTheme .content a,
 .customTheme .related-posts li a:hover {
-  color: 	#001f28;
+  color: rgba(133, 82, 208, 1);
 }

@@ -130,4 +130,4 @@ Now we can finally use this variable for our feed authentication inside our pipe
 
 You will need to change the feed URL with your own and provide a correct user name. Also, notice how we used `$ARTIFACTS_FEED_ACCESS_TOKEN` and `$BITBUCKET_BUILD_NUMBER` variables.
 
-With this step add, you will be able to create a new NuGet package version and push it to your private Azure Artifacts feed each time the pipeline is run.
+With this step added, you will be able to create a new NuGet package version and push it to your private Azure Artifacts feed each time the pipeline is run.

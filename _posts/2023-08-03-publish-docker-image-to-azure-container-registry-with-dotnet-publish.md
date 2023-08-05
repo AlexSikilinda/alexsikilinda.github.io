@@ -9,7 +9,7 @@ tags: DevOps .NET C# Docker
 
 <img src='/public/images/dotnetCli/DotnetPublish.png' alt="dotnet publish command generating a docker image which can be send to AWS ECR, Azure Container Registry, Docker Hub, Google Code Artifacts etc."/>
 
-In the previous article we explored how we can generate docker images of .NET applications and push them to the local Docker Desktop daemon.
+In [the previous article](/posts/create-docker-images-with-dotnet-publish/) we explored how we can generate docker images of .NET applications and push them to the local Docker Desktop daemon.
 
 Let's now review how we can push a Docker image to a remote registry. We'll be using **Azure Container Registry** as our destination, although the process is similar for all Docker Registries.
 <br>

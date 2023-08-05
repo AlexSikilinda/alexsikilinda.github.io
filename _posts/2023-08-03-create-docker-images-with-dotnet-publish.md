@@ -7,7 +7,7 @@ analytics: true
 tags: DevOps .NET C# Docker
 ---
 
-<img src='/public/images/dotnetCli/DotnetPublish.png' alt="dotnet publish command generating a docker image which can be send to AWS ECR, Azure Container Registry, Docker Hub, Google Code Artifacts etc."/>
+<img src='/public/images/dotnetCli/DockerDesktopDotnetPublish.png' alt="local docker desktop with an image pushed by dotnet publish"/>
 
 Docker is a very convenient tool for writing, testing and especially for deploying software. Wide adoption of Docker Containers by all Cloud Providers has made it the default approach for enterprise software deployments.
 
@@ -100,7 +100,7 @@ error CONTAINER1012: The local daemon is not available, but pushing to a local d
 - **Docker Desktop** needs to be running if you are publishing to local daemon.
 - Configuration of the image is done through `.csproj` file.
 
-In the next article we are going to review how to push our Docker image to Azure Container Registry. 
+In [the next article](/posts/publish-docker-image-to-azure-container-registry-with-dotnet-publish/) we are going to review how to push our Docker image to Azure Container Registry. 
 
 
 

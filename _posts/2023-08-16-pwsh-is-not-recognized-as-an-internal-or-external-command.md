@@ -5,7 +5,7 @@ date: 2023-08-16 00:00:01
 description: Fix 'pwsh' is not recognized as an internal or external command, operable program or batch file
 comments: true
 analytics: true
-tags: .NET C# Playwright
+tags: .NET PowerShell Quickfix
 ---
 
 <img src='/public/images/powershell/powershell.png' alt="a console with pwsh is not recognized as an internal or external command error message"/>

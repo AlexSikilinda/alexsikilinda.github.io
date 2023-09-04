@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "How many ECRs do you need?"
-date: 2023-08-27 00:00:01
+date: 2023-09-04 00:00:01
 comments: true
 analytics: true
 tags: AWS DevOps

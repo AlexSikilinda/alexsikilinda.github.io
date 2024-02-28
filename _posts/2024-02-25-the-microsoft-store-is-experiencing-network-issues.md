@@ -18,3 +18,5 @@ If you are experiencing the same - go to [this issue](https://developercommunity
 So far no workarounds have been provided by Microsoft and it really seems like the problem is on their side.
 
 I'll update the post once we have a solution.
+
+**UPDATE:** the workaround for now is to use a US VPN. Although we are still waiting for MS fix for non-VPN access.

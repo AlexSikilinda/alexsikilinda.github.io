@@ -20,3 +20,5 @@ So far no workarounds have been provided by Microsoft and it really seems like t
 I'll update the post once we have a solution.
 
 **UPDATE:** the workaround for now is to use a US VPN. Although we are still waiting for MS fix for non-VPN access.
+
+**UPDATE2:** the issue seem to be fixed, no workarounds required.

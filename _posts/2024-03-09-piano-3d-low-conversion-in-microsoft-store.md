@@ -15,6 +15,7 @@ So the question is, of course, how to improve the conversion. I'm not an expert,
 
 - new look and feel achieved by implementing HDRP rendering pipeline in Unity 3D
 - decreasing the app size (currently ~123MB)
+- new logo
 
 This post will be the baseline for future updates, so just want to track conversion change.
 If you have any advice on what may be wrong, the comments are opened and you are more than welcome.

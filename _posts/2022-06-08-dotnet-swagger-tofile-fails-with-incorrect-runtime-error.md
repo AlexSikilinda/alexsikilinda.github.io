@@ -10,6 +10,8 @@ analytics: true
 <img src='/public/images/swaggerMainPage.png' alt="openapi swagger swaggerui swashbuckle"/>
 
 I have come across a rather nasty bug: after a successful build of our ASP.NET 5 app, we generate a swagger file using `Swashbuckle.AspNetCore.Cli` tool with `dotnet swagger tofile` command. This is set up as a postbuild event. Unfortunately, it doesn't work on my machine, but it does work completely fine on my colleague's machine.
+
+**UDPATE (4/20/2024):** if you encounter this error with .NET 8 - read [my new post addressing this issue](/posts/dotnet-swagger-tofile-dotnet-8/).
 <br>
 
 The post build error I am getting is something like this:
@@ -37,10 +39,10 @@ The solution here is to add [**global.json**](https://docs.microsoft.com/en-us/d
 
 {% highlight json %}
 {
-    "sdk": {
-        "version": "5.0.406",
-        "rollForward": "latestPatch"
-    }
+"sdk": {
+"version": "5.0.406",
+"rollForward": "latestPatch"
+}
 }
 {% endhighlight %}
 
@@ -48,9 +50,9 @@ This file will instruct .NET CLI to use version 5.0.406 or a bigger minor versio
 
 ## Useful tips
 
-* check your `.config/dotnet-tools.json` tools-manifest file, to see which `Swashbuckle.AspNetCore.Cli` version is used
-* try updating `Swashbuckle.AspNetCore.Cli` to the latest version available
-* update all the `Swachbuckle` nuget packages
-* use `dotnet --info` command to check the .NET CLI version used
-* use `dotnet --list-sdks` to list all installed SDKs
-* update your project to the latest .NET version
+- check your `.config/dotnet-tools.json` tools-manifest file, to see which `Swashbuckle.AspNetCore.Cli` version is used
+- try updating `Swashbuckle.AspNetCore.Cli` to the latest version available
+- update all the `Swachbuckle` nuget packages
+- use `dotnet --info` command to check the .NET CLI version used
+- use `dotnet --list-sdks` to list all installed SDKs
+- update your project to the latest .NET version

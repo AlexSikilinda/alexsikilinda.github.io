@@ -210,3 +210,5 @@ The final step is to add our lambda as the target of the rule.
 Let's verify our CDK stack is correct by running `cdk synth` in `cdk` folder, it should produce YAML file in the terminal and new `cdk.out` folder with JSON templates.
 
 You can now [deploy your app](https://docs.aws.amazon.com/cdk/v2/guide/hello_world.html#hello_world_tutorial_deploy) using `cdk deploy` command.
+
+The source code is available [here](https://github.com/AlexSikilinda/DockerizedLambdaWithCdk).

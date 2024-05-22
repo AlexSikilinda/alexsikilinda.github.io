@@ -205,3 +205,8 @@ a.anchor-link:active { color: #EC7963; }
   margin-bottom: 4em;
   margin-top: 4em;
 }
+
+.small, small {
+  font-size: 80%;
+  font-weight: 400;
+}

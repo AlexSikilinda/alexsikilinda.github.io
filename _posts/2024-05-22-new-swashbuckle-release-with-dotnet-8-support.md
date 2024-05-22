@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "New Swashbuckle release with .NET 8 support"
-date: 2024-05-21 00:00:01
+date: 2024-05-22 00:00:01
 comments: true
 analytics: true
 tags: .NET Swagger

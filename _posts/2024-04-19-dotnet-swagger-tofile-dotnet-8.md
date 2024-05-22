@@ -21,6 +21,8 @@ However, there is no new version of **swashbuckle.aspnetcore.cli** for .NET 8, m
 > <cite>[Get started with Swashbuckle and ASP.NET Core](https://learn.microsoft.com/en-us/aspnet/core/tutorials/getting-started-with-swashbuckle?view=aspnetcore-8.0&tabs=visual-studio)</cite>
 
 Let's review the problem and a solution.
+
+**UDPATE (5/22/2024):** there is [a new release of Swashbuckle with .NET 8 support](/posts/new-swashbuckle-release-with-dotnet-8-support/), try getting the latest version if you encounter any problems.
 <br>
 
 ## The problem

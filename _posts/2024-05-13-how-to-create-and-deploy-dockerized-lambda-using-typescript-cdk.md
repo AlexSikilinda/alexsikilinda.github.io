@@ -4,7 +4,7 @@ title: "How to create and deploy a dockerized Lambda using TypeScript CDK"
 date: 2024-05-13 00:00:01
 comments: true
 analytics: true
-tags: .NET AWS
+tags: .NET AWS DevOps
 ---
 
 <img src='/public/images/2024/awsLambda/awsLambda.png' alt="diagram of AWS stack with lambda scheduled by eventbridge rule"/>

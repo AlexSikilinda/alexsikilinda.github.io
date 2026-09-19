@@ -1,0 +1,142 @@
+/*!
+ * giscus theme for sikilinda.com
+ *
+ * Structure and Primer variable names are taken from GitHub's Dark Dimmed
+ * theme, licensed under the MIT License, Copyright (c) 2018 GitHub Inc.
+ * https://github.com/primer/primitives/blob/main/LICENSE
+ * Every value is replaced with this site's own palette so the comment thread
+ * reads as part of the page rather than a GitHub widget parked underneath it.
+ *
+ * giscus injects this as <link rel="stylesheet" crossorigin="anonymous">, so
+ * it must be served with a permissive Access-Control-Allow-Origin header.
+ * GitHub Pages sends `*`, so hosting it here works.
+ */
+
+/* Same URL the page itself requests, so this is a cache hit rather than a
+   second font download inside the iframe. */
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;600&family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&family=Space+Grotesk:wght@500;700&display=swap");
+
+main {
+  /* Syntax — the same token colours the article's own code blocks use, so a
+     snippet in a comment matches a snippet in the post. */
+  --color-prettylights-syntax-comment: #9aa5b8;
+  --color-prettylights-syntax-constant: #f78c6c;
+  --color-prettylights-syntax-entity: #82aaff;
+  --color-prettylights-syntax-storage-modifier-import: #d6deeb;
+  --color-prettylights-syntax-entity-tag: #f07178;
+  --color-prettylights-syntax-keyword: #c792ea;
+  --color-prettylights-syntax-string: #c3e88d;
+  --color-prettylights-syntax-variable: #f78c6c;
+  --color-prettylights-syntax-brackethighlighter-unmatched: #ff8b8b;
+  --color-prettylights-syntax-invalid-illegal-text: #e8e8ef;
+  --color-prettylights-syntax-invalid-illegal-bg: #5c1f1f;
+  --color-prettylights-syntax-carriage-return-text: #e8e8ef;
+  --color-prettylights-syntax-carriage-return-bg: #7a2222;
+  --color-prettylights-syntax-string-regexp: #c3e88d;
+  --color-prettylights-syntax-markup-list: #ffcb6b;
+  --color-prettylights-syntax-markup-heading: #a78bfa;
+  --color-prettylights-syntax-markup-italic: #e8e8ef;
+  --color-prettylights-syntax-markup-bold: #ffffff;
+  --color-prettylights-syntax-markup-deleted-text: #ffd8d3;
+  --color-prettylights-syntax-markup-deleted-bg: rgba(255, 139, 139, 0.14);
+  --color-prettylights-syntax-markup-inserted-text: #c3e88d;
+  --color-prettylights-syntax-markup-inserted-bg: rgba(195, 232, 141, 0.14);
+  --color-prettylights-syntax-markup-changed-text: #ffddb0;
+  --color-prettylights-syntax-markup-changed-bg: rgba(247, 140, 108, 0.14);
+  --color-prettylights-syntax-markup-ignored-text: #a8a6b3;
+  --color-prettylights-syntax-markup-ignored-bg: rgba(167, 139, 250, 0.16);
+  --color-prettylights-syntax-meta-diff-range: #c792ea;
+  --color-prettylights-syntax-brackethighlighter-angle: #9aa5b8;
+  --color-prettylights-syntax-sublimelinter-gutter-mark: #6b7280;
+  --color-prettylights-syntax-constant-other-reference-link: #c3e88d;
+
+  /* Buttons */
+  --color-btn-text: #e8e8ef;
+  --color-btn-bg: #282828;
+  --color-btn-border: rgba(255, 255, 255, 0.16);
+  --color-btn-shadow: 0 0 #0000;
+  --color-btn-inset-shadow: 0 0 #0000;
+  --color-btn-hover-bg: #323232;
+  --color-btn-hover-border: rgba(167, 139, 250, 0.32);
+  --color-btn-active-bg: #2b2b2b;
+  --color-btn-active-border: #a78bfa;
+  --color-btn-selected-bg: #282828;
+  --color-btn-primary-text: #17131f;
+  --color-btn-primary-bg: #a78bfa;
+  --color-btn-primary-border: transparent;
+  --color-btn-primary-shadow: 0 0 #0000;
+  --color-btn-primary-inset-shadow: 0 0 #0000;
+  --color-btn-primary-hover-bg: #c4b5fd;
+  --color-btn-primary-hover-border: transparent;
+  --color-btn-primary-selected-bg: #8552d0;
+  --color-btn-primary-selected-shadow: 0 0 #0000;
+  --color-btn-primary-disabled-text: rgba(23, 19, 31, 0.6);
+  --color-btn-primary-disabled-bg: rgba(167, 139, 250, 0.5);
+  --color-btn-primary-disabled-border: transparent;
+
+  --color-action-list-item-default-hover-bg: rgba(255, 255, 255, 0.06);
+  --color-segmented-control-bg: rgba(255, 255, 255, 0.05);
+  --color-segmented-control-button-bg: #1f1f1f;
+  --color-segmented-control-button-selected-border: #a78bfa;
+
+  /* Surfaces and text — the same three-step ramp as the page */
+  --color-fg-default: #e8e8ef;      /* 13.5:1 on --bg  */
+  --color-fg-muted: #a8a6b3;        /*  6.9:1 on --bg  */
+  --color-fg-subtle: #9ca3af;       /*  6.5:1 on --bg  */
+  --color-canvas-default: #1f1f1f;  /* must match the page exactly */
+  --color-canvas-overlay: #282828;
+  --color-canvas-inset: #141414;
+  --color-canvas-subtle: #262626;
+  --color-border-default: rgba(255, 255, 255, 0.16);
+  --color-border-muted: rgba(255, 255, 255, 0.09);
+  --color-neutral-muted: rgba(255, 255, 255, 0.08);
+
+  --color-accent-fg: #a78bfa;
+  --color-accent-emphasis: #8552d0;
+  --color-accent-muted: rgba(167, 139, 250, 0.4);
+  --color-accent-subtle: rgba(167, 139, 250, 0.12);
+
+  --color-success-fg: #c3e88d;
+  --color-attention-fg: #ffcb6b;
+  --color-attention-muted: rgba(255, 203, 107, 0.4);
+  --color-attention-subtle: rgba(255, 203, 107, 0.15);
+  --color-danger-fg: #ff8b8b;
+  --color-danger-muted: rgba(255, 139, 139, 0.4);
+  --color-danger-subtle: rgba(255, 139, 139, 0.1);
+  --color-primer-shadow-inset: 0 0 #0000;
+
+  --color-social-reaction-bg-hover: rgba(167, 139, 250, 0.12);
+  --color-social-reaction-bg-reacted-hover: rgba(167, 139, 250, 0.22);
+
+  font-family: "Open Sans", -apple-system, "Segoe UI", system-ui, sans-serif;
+}
+
+/*! Custom CSS */
+
+main .markdown-body {
+  font-family: "Open Sans", -apple-system, "Segoe UI", system-ui, sans-serif;
+  font-size: 0.9375rem;
+  line-height: 1.65;
+}
+
+main .markdown-body code,
+main .markdown-body pre,
+main .markdown-body tt {
+  font-family: "Inconsolata", ui-monospace, "Cascadia Mono", Consolas, monospace;
+}
+
+main .markdown-body pre {
+  border: 1px solid var(--color-border-muted);
+  border-radius: 10px;
+}
+
+/* Match the page's radii — the site uses 10px for surfaces, 999px for pills. */
+.gsc-comment > div,
+.gsc-comment-box,
+.gsc-reply-box {
+  border-radius: 10px;
+}
+
+.gsc-reactions-count { display: none; }
+
+main .gsc-loading-image { background-image: none; }

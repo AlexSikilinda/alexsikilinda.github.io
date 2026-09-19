@@ -1,18 +1,52 @@
-{% if page.comments %}
-  <!-- Add Disqus comments. -->
-  <div id="disqus_thread"></div>
-  <script type="text/javascript">
-      /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-      var disqus_shortname = '{{ site.social.disqus }}';
-      var disqus_url = '{{ site.url }}{{ page.url }}';
-
-      /* * * DON'T EDIT BELOW THIS LINE * * */
-      (function() {
-          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-      })();
-  </script>
-  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-  <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-{% endif %}
+{%- if page.comments -%}
+{%- assign giscus_ready = false -%}
+{%- if site.giscus.category_id and site.giscus.category_id != "" -%}
+  {%- assign giscus_ready = true -%}
+{%- endif -%}
+<section class="comments" aria-labelledby="comments-title">
+  <h2 class="comments-title" id="comments-title">Comments</h2>
+  {%- if giscus_ready %}
+  {%- comment -%}
+    The custom theme is a URL, and giscus can only fetch it over HTTPS from the
+    live site. Locally that 404s and the widget renders unstyled, so dev falls
+    back to a built-in dark theme.
+  {%- endcomment -%}
+  {%- if jekyll.environment == "production" -%}
+    {%- assign giscus_theme = site.giscus.theme -%}
+  {%- else -%}
+    {%- assign giscus_theme = "dark_dimmed" -%}
+  {%- endif %}
+  <script
+    src="https://giscus.app/client.js"
+    data-repo="{{ site.giscus.repo }}"
+    data-repo-id="{{ site.giscus.repo_id }}"
+    data-category="{{ site.giscus.category }}"
+    data-category-id="{{ site.giscus.category_id }}"
+    data-mapping="{{ site.giscus.mapping }}"
+    data-strict="1"
+    data-reactions-enabled="{{ site.giscus.reactions }}"
+    data-emit-metadata="0"
+    data-input-position="bottom"
+    data-theme="{{ giscus_theme }}"
+    data-lang="en"
+    data-loading="lazy"
+    crossorigin="anonymous"
+    async
+  ></script>
+  <noscript>
+    <p>
+      Comments need JavaScript. You can read and post them
+      <a href="https://github.com/{{ site.giscus.repo }}/discussions">on GitHub</a>
+      instead.
+    </p>
+  </noscript>
+  {%- else %}
+  <!-- giscus is not configured yet. Set giscus.category_id (and confirm
+       giscus.repo_id) in _config.yml using the values from https://giscus.app -->
+  <p>
+    Comments live in
+    <a href="https://github.com/{{ site.giscus.repo }}/discussions">GitHub Discussions</a>.
+  </p>
+  {%- endif %}
+</section>
+{%- endif -%}

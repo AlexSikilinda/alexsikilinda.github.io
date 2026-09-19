@@ -266,13 +266,6 @@ body {
   border-left-color: var(--accent);
 }
 
-.last-sidebar-paragraph {
-  margin: 2rem 0 0;
-  font-size: 0.75rem;
-  letter-spacing: 0.08em;
-  color: var(--text-muted);         /* 6.5:1 */
-}
-
 /* --- table of contents --------------------------------------------------
    Post pages only. It reuses the nav's exact language — hairline, muted
    text, accent bar on the current item — so the column reads as one thing
@@ -509,7 +502,9 @@ abbr[title] {
 }
 
 /* Index shows each post's full excerpt, exactly as authored. The feed stays
-   scannable through hierarchy and rhythm rather than by hiding content. */
+   scannable through hierarchy and rhythm rather than by hiding content.
+   The excerpt is body copy, not secondary chrome, so it reads at the full
+   text colour — dimming it made a whole paragraph look disabled. */
 .posts .post > p:has(img) {
   display: block;
   overflow: visible;
@@ -517,7 +512,7 @@ abbr[title] {
 }
 
 .posts .post > p:not(:has(img)) {
-  color: var(--text-dim);
+  color: var(--text);
   font-size: 1rem;
   margin-bottom: 0.9rem;
 }
@@ -973,6 +968,29 @@ a.pagination-item:hover {
 
 @media (min-width: 72rem) {
   .site-footer { padding-left: 2.5rem; padding-right: 2.5rem; }
+}
+
+/* --------------------------------------------------------------------------
+   Comments — giscus renders into an iframe it appends here and sizes itself.
+   The section gets the same hairline separation as Related Posts.
+   -------------------------------------------------------------------------- */
+
+.comments {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--rule);
+}
+
+.comments-title { margin-top: 0; font-size: 1.25rem; }
+
+.giscus,
+.giscus-frame {
+  width: 100%;
+}
+
+.giscus-frame {
+  border: 0;
+  color-scheme: dark;
 }
 
 .ad-unit { margin: 3rem 0; }

@@ -32,8 +32,20 @@ author:
 # Social Integration
 social:
   twitter: AlexSikilinda
-  disqus: sikilinda
   addthis_pubid: ra-56dcb98b76d5a726
+
+# Comments — giscus, backed by GitHub Discussions.
+# repo_id and category_id are generated at https://giscus.app once Discussions
+# is enabled on the repo and the giscus app is installed. `category` must match
+# the name of the discussion category you create there.
+giscus:
+  repo: "AlexSikilinda/alexsikilinda.github.io"
+  repo_id: "MDEwOlJlcG9zaXRvcnkzNzMyNzA5MA=="
+  category: "Comments"
+  category_id: "DIC_kwDOAjmQ8s4DF9K4"
+  mapping: "pathname"
+  reactions: "1"
+  theme: "https://sikilinda.com/public/css/giscus.css"
 
 # Google Analytics Configuration
 # Proxy response must be in JSON and should have the fields - ga:pagePath, ga:pageview

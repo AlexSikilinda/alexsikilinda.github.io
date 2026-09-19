@@ -7,7 +7,7 @@ analytics: true
 tags: .NET Swagger
 ---
 
-<img src='/public/images/2024/swashbuckle/SwashbuckleAspNetCoreCli.png' alt="swashbuckle nuget portal page with 6.6.1 release"/>
+<img src='/public/images/2024/swashbuckle/SwashbuckleAspNetCoreCli.png' alt="swashbuckle nuget portal page with 6.6.1 release" width="1798" height="1188" decoding="async"/>
 
 **Swashbuckle.AspNetCore** v6.6.1 was released recently, bringing native .NET 8 support and other improvements, so it's time to update if you [experienced related problems](/posts/dotnet-swagger-tofile-dotnet-8/) before.
 <br>

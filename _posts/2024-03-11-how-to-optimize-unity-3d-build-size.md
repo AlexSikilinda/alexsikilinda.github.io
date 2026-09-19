@@ -7,7 +7,7 @@ analytics: true
 tags: Unity3D
 ---
 
-<img src='/public/images/2024/unity3dBuildSize/initialBuildSizeReport.png' alt="unity 3d build report with size numbers"/>
+<img src='/public/images/2024/unity3dBuildSize/initialBuildSizeReport.png' alt="unity 3d build report with size numbers" width="1384" height="894" decoding="async"/>
 
 At some point in your Unity 3D development cycle, you may find yourself in a situation where your build size feels much bigger than you would expect.
 
@@ -39,7 +39,7 @@ After the successful build, you can open the Editor Logs from the Unity 3D conso
 
 It opens the `Editor.log` text file in Notepad and we can either scroll down or search for the **Build Report** section:
 
-<img src='/public/images/2024/unity3dBuildSize/initialBuildSizeReport.png' alt="unity 3d build report with size numbers"/>
+<img src='/public/images/2024/unity3dBuildSize/initialBuildSizeReport.png' alt="unity 3d build report with size numbers" width="1384" height="894" loading="lazy" decoding="async"/>
 
 ### Inspecting the Build Report
 

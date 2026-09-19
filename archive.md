@@ -26,7 +26,7 @@ title: Archive
 
 <p>
 
-<span class="post-date">{{ post.date | date_to_string }}</span> <a class="post-title post-link" href="{{ post.url }}">{{ post.title }}</a>
+<time class="post-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%-d %b %Y" }}</time> <a class="post-title post-link" href="{{ post.url | relative_url }}">{{ post.title }}</a>
 
 </p>
 {% endfor %}

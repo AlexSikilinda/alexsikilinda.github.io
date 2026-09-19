@@ -1,0 +1,24 @@
+{%- comment -%}
+  kramdown emits an id on every h2/h3, so the anchors already exist — this
+  only surfaces them. Rendered from sidebar.html on post layouts with three or
+  more headings; below that a contents list is noise, not navigation.
+{%- endcomment -%}
+<details class="toc" open>
+  <summary class="toc-summary">On this page</summary>
+  <ol class="toc-list">
+    {%- assign heading_blocks = content | split: "<h" -%}
+    {%- for block in heading_blocks -%}
+      {%- assign level = block | slice: 0, 1 -%}
+      {%- if level == "2" or level == "3" -%}
+        {%- assign head_open = block | split: "</h" | first -%}
+        {%- if head_open contains 'id="' -%}
+          {%- assign id_parts = head_open | split: 'id="' -%}
+          {%- assign heading_id = id_parts[1] | split: '"' | first -%}
+          {%- capture heading_markup -%}<h{{ head_open }}</h{{ level }}>{%- endcapture -%}
+          {%- assign heading_text = heading_markup | strip_html | strip -%}
+    <li class="toc-item toc-h{{ level }}"><a href="#{{ heading_id | escape }}">{{ heading_text }}</a></li>
+        {%- endif -%}
+      {%- endif -%}
+    {%- endfor -%}
+  </ol>
+</details>

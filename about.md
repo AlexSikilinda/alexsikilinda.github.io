@@ -7,7 +7,7 @@ title: About Me
 
 <br> -->
                                           
-### Who am I?
+## Who am I?
 
 Hi, my name is Alex Sikilinda. I live in Kharkov, Ukraine. I am a .NET developer, a teacher, a student, a geek etc :)
 
@@ -27,12 +27,12 @@ I left Langate in 2018, after 2.5 years, mostly becaue I wanted new challenges. 
 
 I used to teach .NET 101 course in [IT Cloud Academy](https://itcloud.academy/).
 
-### What is this blog about?
+## What is this blog about?
 
 This blog is about my journey in software development world, although I do not promise to post only about programming.
 Since I develop [my own apps](/myprojects/) there will be a lot of articles about them.
 
-### What are my hobbies?
+## What are my hobbies?
 
 I [play the piano](https://soundcloud.com/alex-sikilinda) and I am learning to play the guitar (mostly electric). Sometimes I pretend to compose music,
 but you aren't gonna hear it, at least yet :)
@@ -40,7 +40,7 @@ I used to play basketball and volleyball, I haven't done it recently though beca
 
 One of my passions is space and space technologies in particular, so I am really excited about all these new space-related private companies such as SpaceX, Virgin Galactic, Blue Origin etc.
 
-### Get in touch
+## Get in touch
 
 [Linkedin](https://www.linkedin.com/in/alexsikilinda?trk=nav_responsive_tab_profile)
 

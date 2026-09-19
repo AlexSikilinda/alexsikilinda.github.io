@@ -18,7 +18,6 @@
   "homepage": "https://github.com/msanand/jekyllstarter",
   "devDependencies": {
     "grunt": "^1.5.3",
-    "grunt-contrib-cssmin": "^4.0.0",
     "grunt-jekyll": "^1.0.1"
   }
 }

@@ -1,31 +1,47 @@
-<div class="sidebar">
+<aside class="sidebar">
   <div class="container sidebar-sticky">
+    {%- assign is_home = false -%}
+    {%- if page.title == "Home" -%}{%- assign is_home = true -%}{%- endif -%}
+
     <div class="sidebar-about">
-      <h1>
-        <a href="/"> {{ site.title }} </a>
-      </h1>
+      {%- comment -%}
+        The nameplate is the page's <h1> only where nothing else claims it —
+        the home page. Elsewhere the article or page title is the h1 and this
+        is a paragraph. .sidebar-title carries the styling either way.
+      {%- endcomment -%}
+      {% if is_home %}
+      <h1 class="sidebar-title"><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h1>
+      {% else %}
+      <p class="sidebar-title"><a href="{{ '/' | relative_url }}">{{ site.title }}</a></p>
+      {% endif %}
       <p class="lead">{{ site.description }}</p>
     </div>
 
-    <nav class="sidebar-nav">
+    <nav class="sidebar-nav" aria-label="Main">
       <a
-        class="sidebar-nav-item{% if page.url == site.baseurl %} active{% endif %}"
-        href="/"
+        class="sidebar-nav-item{% if is_home %} active{% endif %}"
+        {% if is_home %}aria-current="page"{% endif %}
+        href="{{ '/' | relative_url }}"
         >Home</a
       >
 
       {% comment %} The code below dynamically generates a sidebar nav of pages
       with `layout: page` in the front-matter. See readme for usage. {%
       endcomment %} {% assign pages_list = site.pages %} {% for node in
-      pages_list %} {% if node.title != null %} {% if node.layout == "page" %}
+      pages_list %} {% if node.title != null %} {% if node.layout == "page" %} {%
+      assign is_current = false %} {% if page.url == node.url %} {% assign
+      is_current = true %} {% endif %}
       <a
-        class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}"
-        href="{{ node.url }}"
+        class="sidebar-nav-item{% if is_current %} active{% endif %}"
+        {% if is_current %}aria-current="page"{% endif %}
+        href="{{ node.url | relative_url }}"
         >{{ node.title }}</a
       >
       {% endif %} {% endif %} {% endfor %}
     </nav>
 
+    {% if has_toc %}{% include toc.html %}{% endif %}
+
     <p class="last-sidebar-paragraph">{{ site.time | date: '%Y' }}</p>
   </div>
-</div>
+</aside>

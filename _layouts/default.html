@@ -1,18 +1,50 @@
 <!DOCTYPE html>
 <html lang="en-us">
+  {%- comment -%}
+    kramdown already emits ids on every h2/h3, so the table of contents only
+    has to count them. Done here so both head.html (script tag) and
+    sidebar.html (the list itself) agree on whether a TOC exists.
+  {%- endcomment -%}
+  {%- assign toc_count = 0 -%}
+  {%- if page.layout == "post" -%}
+    {%- assign heading_blocks = content | split: "<h" -%}
+    {%- for block in heading_blocks -%}
+      {%- assign level = block | slice: 0, 1 -%}
+      {%- if level == "2" or level == "3" -%}
+        {%- assign head_open = block | split: "</h" | first -%}
+        {%- if head_open contains 'id="' -%}
+          {%- assign toc_count = toc_count | plus: 1 -%}
+        {%- endif -%}
+      {%- endif -%}
+    {%- endfor -%}
+  {%- endif -%}
+  {%- assign has_toc = false -%}
+  {%- if toc_count >= 3 -%}{%- assign has_toc = true -%}{%- endif -%}
 
   {% include head.html %}
 
   <body class="customTheme layout-reverse">
+    <a class="skip-link" href="#main">Skip to content</a>
 
-    {% include sidebar.html %}
+    <div class="shell">
+      {% include sidebar.html %}
 
-    <div class="content container">
-      {{ content }}
+      <main id="main" tabindex="-1" class="content container">
+        {{ content }}
 
-      {% include comments.html %}
+        {% include comments.html %}
+      </main>
     </div>
 
-    {% include google_analytics.html %}
+    <footer class="site-footer">
+      <div class="site-footer-inner">
+        <span>&copy; {{ site.time | date: "%Y" }} Alex Sikilinda</span>
+        <nav class="site-footer-links" aria-label="Site">
+          <a href="{{ '/atom.xml' | relative_url }}">RSS</a>
+          <a href="{{ '/archive/' | relative_url }}">Archive</a>
+          <a href="{{ '/tags/' | relative_url }}">Tags</a>
+        </nav>
+      </div>
+    </footer>
   </body>
 </html>

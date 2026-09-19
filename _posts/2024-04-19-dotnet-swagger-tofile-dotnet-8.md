@@ -7,7 +7,7 @@ analytics: true
 tags: .NET Swagger OpenAPI Quickfix
 ---
 
-<img src='/public/images/2024/csprojWithSwaggerPostBuild.png' alt="csproj file with postbuild event generate swagger document"/>
+<img src='/public/images/2024/csprojWithSwaggerPostBuild.png' alt="csproj file with postbuild event generate swagger document" width="1875" height="1151" decoding="async"/>
 
 Generating an OpenAPI (Swagger) file during build time is a common scenario, usually done to generate the API client automatically. There are a few ways we can do it,
 `dotnet swagger tofile` command from **swashbuckle.aspnetcore.cli** tool being one of them.

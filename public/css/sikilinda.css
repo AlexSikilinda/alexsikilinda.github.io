@@ -1,0 +1,978 @@
+/* ==========================================================================
+   sikilinda.com — refined stylesheet
+   Refinement pass: preserves the dark + purple + Space Grotesk identity,
+   replaces the inherited Hyde light-theme remnants and fixes the
+   composition, contrast and accessibility floor.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Tokens
+   -------------------------------------------------------------------------- */
+
+:root {
+  /* Surfaces — the base stays exactly #1f1f1f because post images are
+     authored on that value and must blend edge-to-edge with the page.
+     Never retint --bg without re-exporting every image. */
+  --bg: #1f1f1f;
+  --bg-raised: #282828;
+  --bg-code: #141414;
+
+  /* Text — one ramp, three steps */
+  --text: #e8e8ef;          /* 13.5:1 on --bg */
+  --text-dim: #a8a6b3;      /*  6.9:1 on --bg */
+  --text-muted: #9ca3af;    /*  6.5:1 on --bg */
+
+  /* Brand — one accent, used for every interactive affordance */
+  --accent: #a78bfa;        /*  6.1:1 on --bg — passes AA as body text */
+  --accent-soft: #c4b5fd;   /*  8.5:1 on --bg */
+  --accent-deep: #8552d0;   /* original brand purple, now fills & gradients only */
+  --accent-wash: rgba(167, 139, 250, 0.12);
+  --accent-edge: rgba(167, 139, 250, 0.32);
+
+  /* Lines */
+  --rule: rgba(255, 255, 255, 0.09);
+  --rule-strong: rgba(255, 255, 255, 0.16);
+
+  /* Type */
+  --font-display: "Space Grotesk", "Segoe UI", system-ui, sans-serif;
+  --font-body: "Open Sans", -apple-system, "Segoe UI", system-ui, sans-serif;
+  --font-mono: "Inconsolata", ui-monospace, "Cascadia Mono", Consolas, monospace;
+
+  --measure: 40rem;
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* --------------------------------------------------------------------------
+   Focus — visible everywhere. The original stylesheet had none.
+   -------------------------------------------------------------------------- */
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  z-index: 100;
+  padding: 0.7rem 1.1rem;
+  background: var(--accent);
+  color: #17131f;
+  font-weight: 700;
+  font-size: 0.9375rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: top 0.25s var(--ease-out);
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* --------------------------------------------------------------------------
+   Shell — grid replaces the fixed sidebar that squeezed the reading column
+   -------------------------------------------------------------------------- */
+
+.shell {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 2.5rem;
+  width: 100%;
+  max-width: 70rem;
+  margin: 0 auto;
+  padding: 1.5rem 1.5rem 0;
+}
+
+.content {
+  min-width: 0;
+  max-width: var(--measure);
+  margin-inline: auto;
+  width: 100%;
+  padding: 0;
+}
+
+@media (min-width: 58rem) {
+  .shell {
+    grid-template-columns: minmax(0, 1fr) 13rem;
+    gap: 2.5rem;
+    padding: 2rem 1.5rem 0;
+    align-items: start;
+  }
+  .sidebar { grid-column: 2; grid-row: 1; }
+  .content { grid-column: 1; grid-row: 1; margin-inline: 0; }
+}
+
+@media (min-width: 72rem) {
+  .shell {
+    grid-template-columns: minmax(0, 1fr) 15rem;
+    gap: 4rem;
+    padding: 2.5rem 2.5rem 0;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Sidebar — a masthead, not an object.
+
+   Every earlier attempt failed the same way: a card, a badge, a ticket are all
+   containers, and this page has no containers. Post images are authored with a
+   #1f1f1f matte so they dissolve into the field; the content column is
+   typography and hairlines on that same field. A bordered, shadowed, shaped
+   panel was the only enclosed thing on the page, which is why it read as
+   foreign no matter how it was styled.
+
+   So it is not styled as a thing. It is set on the field like everything else,
+   and presence comes from scale, space and one accent rule. This also removes
+   the original's real defect: the block was absolutely positioned to
+   bottom:1rem of a full-height column, leaving up to ~748px of dead gradient
+   above the name.
+   -------------------------------------------------------------------------- */
+
+.sidebar {
+  position: relative;
+  padding: 0;
+  background: none;
+  border: 0;
+  color: var(--text);
+}
+
+@media (min-width: 58rem) {
+  .sidebar {
+    position: sticky;
+    top: 3.25rem;
+    /* On a short viewport the column is taller than the screen, and a sticky
+       element taller than its viewport strands its own bottom below the fold.
+       Let it scroll itself instead of hiding the year and the last sections. */
+    max-height: calc(100vh - 5.5rem);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+    scrollbar-color: var(--rule-strong) transparent;
+    scrollbar-gutter: stable;
+  }
+}
+
+.sidebar-sticky { position: static; }
+
+.sidebar-about { padding: 0; }
+
+.sidebar-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 1.1rem + 1.15vw, 1.9375rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+  color: #fff;                      /* 15.9:1 */
+}
+
+.sidebar-title a { color: inherit; text-decoration: none; background-image: none; }
+.sidebar-title a:hover { text-decoration: none; color: var(--accent-soft); }
+
+/* The one mark of identity. A short rule is a masthead device, not a frame,
+   so it gives the name authority without enclosing anything. */
+.sidebar-title::after {
+  content: "";
+  display: block;
+  width: 2.25rem;
+  height: 2px;
+  margin: 0.85rem 0 0;
+  background: var(--accent);
+}
+
+.sidebar .lead {
+  margin: 0.85rem 0 0;
+  font-size: 0.9375rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.55;
+  color: var(--text-dim);           /* 6.9:1 */
+  max-width: 22ch;
+}
+
+/* --- navigation ---------------------------------------------------------
+   Quiet by default so the name leads, and separated by space plus a single
+   hairline of the same weight used everywhere else on the page.            */
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  margin: 2rem 0 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rule);
+}
+
+.sidebar-nav-item {
+  display: block;
+  padding: 0.32rem 0 0.32rem 0.9rem;
+  border-left: 2px solid transparent;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: var(--text-dim);           /* 6.9:1 */
+  text-decoration: none;
+  transition: color 0.18s var(--ease-out), border-color 0.18s var(--ease-out);
+}
+
+.sidebar-nav-item:hover {
+  color: var(--text);
+  border-left-color: var(--rule-strong);
+  text-decoration: none;
+}
+
+/* The original defined .active but never emitted it on any page. The marker
+   sits in the nav's own left edge, so nothing shifts when it moves. */
+.sidebar-nav-item.active {
+  font-weight: 600;
+  color: #fff;
+  border-left-color: var(--accent);
+}
+
+.last-sidebar-paragraph {
+  margin: 2rem 0 0;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);         /* 6.5:1 */
+}
+
+/* --- table of contents --------------------------------------------------
+   Post pages only. It reuses the nav's exact language — hairline, muted
+   text, accent bar on the current item — so the column reads as one thing
+   rather than a masthead with a widget bolted underneath.                 */
+
+.toc {
+  margin: 2rem 0 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rule);
+}
+
+.toc-summary {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);         /* 6.5:1 */
+  cursor: pointer;
+  list-style: none;
+}
+
+.toc-summary::-webkit-details-marker { display: none; }
+
+.toc-summary::before {
+  content: "";
+  width: 0.4rem;
+  height: 0.4rem;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(45deg) translate(-1px, -1px);
+  transition: transform 0.2s var(--ease-out);
+}
+
+.toc[open] > .toc-summary::before {
+  transform: rotate(-135deg) translate(-1px, -1px);
+}
+
+.toc-summary:hover { color: var(--text-dim); }
+
+.toc-list {
+  margin: 0.75rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.toc-item a {
+  display: block;
+  padding: 0.28rem 0 0.28rem 0.9rem;
+  border-left: 2px solid transparent;
+  font-size: 0.8125rem;
+  line-height: 1.45;
+  color: var(--text-muted);         /* 6.5:1 */
+  text-decoration: none;
+  transition: color 0.18s var(--ease-out), border-color 0.18s var(--ease-out);
+}
+
+.toc-item a:hover {
+  color: var(--text);
+  border-left-color: var(--rule-strong);
+  text-decoration: none;
+}
+
+.toc-h3 a { padding-left: 1.85rem; font-size: 0.78125rem; }
+
+.toc-item a.is-current {
+  color: var(--text);               /* 13.5:1 */
+  border-left-color: var(--accent);
+}
+
+/* The one authored motion moment: jumping to a section is a movement, not a
+   teleport, so the reader keeps their place in the document. */
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+
+:is(h2, h3)[id] { scroll-margin-top: 1.5rem; }
+
+/* --- single column ------------------------------------------------------ */
+
+@media (max-width: 57.99rem) {
+  .sidebar-nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.15rem 1.35rem;
+  }
+
+  /* A left bar is meaningless in a horizontal row; the marker moves under. */
+  .sidebar-nav-item {
+    padding: 0.2rem 0 0.3rem;
+    border-left: 0;
+    border-bottom: 2px solid transparent;
+  }
+
+  .sidebar-nav-item:hover { border-bottom-color: var(--rule-strong); }
+  .sidebar-nav-item.active { border-bottom-color: var(--accent); }
+
+  .sidebar .lead { max-width: none; }
+}
+
+/* --------------------------------------------------------------------------
+   Typography
+   -------------------------------------------------------------------------- */
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0 0 0.6rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.18;
+  letter-spacing: -0.02em;
+  color: #fff;
+  text-wrap: balance;
+}
+
+h1 { font-size: clamp(1.875rem, 1.4rem + 1.8vw, 2.5rem); letter-spacing: -0.03em; }
+h2 { margin-top: 2.75rem; font-size: 1.5rem; }
+h3 { margin-top: 2rem; font-size: 1.1875rem; }
+h4, h5, h6 { margin-top: 1.5rem; font-size: 1rem; }
+
+p { margin: 0 0 1.15rem; }
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+.page a,
+.post a {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--accent-edge);
+  transition: text-decoration-color 0.2s var(--ease-out);
+}
+
+.page a:hover,
+.post a:hover {
+  text-decoration-color: var(--accent);
+}
+
+/* The original put a purple drop shadow behind every bold word. */
+strong, b {
+  color: #fff;
+  font-weight: 700;
+  text-shadow: none;
+}
+
+em, i { color: var(--text); }
+
+ul, ol, dl { margin: 0 0 1.15rem; padding-left: 1.35rem; }
+li { margin-bottom: 0.4rem; }
+dt { font-weight: 700; color: #fff; }
+dd { margin: 0 0 0.5rem; }
+
+hr {
+  height: 1px;
+  margin: 2.5rem 0;
+  border: 0;
+  background: var(--rule);
+}
+
+small, .small { font-size: 0.8125rem; }
+
+abbr {
+  font-size: 0.875em;
+  font-weight: 700;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+abbr[title] {
+  cursor: help;
+  border-bottom: 1px dotted var(--rule-strong);
+  text-decoration: none;
+}
+
+.text-muted { color: var(--text-muted) !important; }
+
+/* --------------------------------------------------------------------------
+   Post list — an editorial index, separated by rules rather than boxes
+   -------------------------------------------------------------------------- */
+
+.posts { display: block; }
+
+.post,
+.page {
+  margin: 0 0 2.5rem;
+}
+
+.posts .post {
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.posts .post:last-child { border-bottom: 0; padding-bottom: 0; }
+
+.post-date {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.8125rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.page-title,
+.post-title {
+  margin: 0 0 0.6rem;
+  font-family: var(--font-display);
+  color: #fff;
+}
+
+.posts .post-title {
+  font-size: clamp(1.375rem, 1.15rem + 0.9vw, 1.625rem);
+  line-height: 1.18;
+}
+
+.post-title a {
+  color: #fff;
+  text-decoration: none;
+  background: none;
+}
+
+.post-title a:hover {
+  color: var(--accent-soft);
+  text-decoration: none;
+}
+
+/* Index shows each post's full excerpt, exactly as authored. The feed stays
+   scannable through hierarchy and rhythm rather than by hiding content. */
+.posts .post > p:has(img) {
+  display: block;
+  overflow: visible;
+  margin-bottom: 1.1rem;
+}
+
+.posts .post > p:not(:has(img)) {
+  color: var(--text-dim);
+  font-size: 1rem;
+  margin-bottom: 0.9rem;
+}
+
+.posts .post img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 1.1rem;
+}
+
+.continue-reading {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.35rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.continue-reading::after {
+  content: "→";
+  transition: transform 0.35s var(--ease-out);
+}
+
+.continue-reading:hover { text-decoration: underline; text-underline-offset: 3px; }
+.continue-reading:hover::after { transform: translateX(4px); }
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Tags
+   -------------------------------------------------------------------------- */
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  list-style: none;
+  margin: 0 0 1.1rem;
+  padding: 0;
+  overflow: visible;
+}
+
+.tags li { float: none; margin: 0; }
+
+.tag {
+  display: inline-block;
+  padding: 0.2rem 0.65rem;
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: var(--accent-soft);
+  background: var(--accent-wash);
+  border: 1px solid var(--accent-edge);
+  border-radius: 999px;
+  text-decoration: none !important;
+  transition: background-color 0.2s var(--ease-out), color 0.2s var(--ease-out);
+}
+
+.tag:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #17131f !important;
+}
+
+/* --------------------------------------------------------------------------
+   Code — a dark-native palette. The original shipped the stock light
+   Pygments theme on a pure black background; `.ow` was #000 on #000.
+   Every token below clears 4.5:1 against --bg-code.
+   -------------------------------------------------------------------------- */
+
+code, pre, kbd, samp {
+  font-family: var(--font-mono);
+  text-shadow: none !important;
+}
+
+code {
+  padding: 0.15em 0.4em;
+  font-size: 0.9em;
+  color: var(--accent-soft);
+  background-color: var(--bg-code);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+}
+
+pre {
+  display: block;
+  margin: 0 0 1.5rem;
+  padding: 1.1rem 1.25rem;
+  font-size: 0.875rem;
+  line-height: 1.65;
+  color: #d6deeb;
+  background-color: var(--bg-code);
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  overflow-x: auto;
+  white-space: pre;
+  word-break: normal;       /* was break-all — it split identifiers mid-token */
+  word-wrap: normal;
+  tab-size: 2;
+  overscroll-behavior-x: contain;
+}
+
+/* These blocks scroll sideways, so they are focusable now. Keyboard users had
+   no way to reach the overflow at all; the ring confirms the block has focus
+   and is what the arrow keys will move. */
+pre:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-color: transparent;
+}
+
+pre code {
+  padding: 0;
+  font-size: 100%;
+  color: inherit;
+  background: transparent;
+  border: 0;
+}
+
+/* Rouge emits both <div class="highlight"> and <pre class="highlight">,
+   so the wrapper rule must not strip the surface off the <pre>. */
+div.highlight {
+  margin-bottom: 1.5rem;
+  border-radius: 10px;
+  background: transparent;
+}
+
+pre.highlight,
+.highlight pre {
+  background-color: var(--bg-code);
+}
+
+div.highlight pre { margin-bottom: 0; }
+
+.highlight .hll { background-color: rgba(167, 139, 250, 0.16); }
+
+/* Comments */
+.highlight .c,
+.highlight .c1,
+.highlight .cm,
+.highlight .cs,
+.highlight .cp { color: #9aa5b8; font-style: italic; }
+
+/* Keywords */
+.highlight .k,
+.highlight .kc,
+.highlight .kd,
+.highlight .kn,
+.highlight .kp,
+.highlight .kr { color: #c792ea; }
+
+/* Types */
+.highlight .kt,
+.highlight .nc,
+.highlight .nn,
+.highlight .no { color: #ffcb6b; }
+
+/* Strings */
+.highlight .s,
+.highlight .s1,
+.highlight .s2,
+.highlight .sb,
+.highlight .sc,
+.highlight .sd,
+.highlight .se,
+.highlight .sh,
+.highlight .si,
+.highlight .sx,
+.highlight .sr,
+.highlight .ss { color: #c3e88d; }
+
+/* Numbers */
+.highlight .m,
+.highlight .mf,
+.highlight .mh,
+.highlight .mi,
+.highlight .mo,
+.highlight .il { color: #f78c6c; }
+
+/* Functions, attributes, tags */
+.highlight .nf,
+.highlight .na { color: #82aaff; }
+.highlight .nt { color: #f07178; }
+
+/* Variables, names, operators */
+.highlight .nv,
+.highlight .vc,
+.highlight .vg,
+.highlight .vi,
+.highlight .nb,
+.highlight .ni,
+.highlight .nl,
+.highlight .nd,
+.highlight .bp { color: #d6deeb; }
+
+.highlight .o,
+.highlight .ow,
+.highlight .p,
+.highlight .w { color: #a6accd; }
+
+.highlight .ne,
+.highlight .err,
+.highlight .gr { color: #ff8b8b; background: transparent; }
+
+.highlight .gd { color: #ff8b8b; background: rgba(255, 139, 139, 0.12); border: 0; }
+.highlight .gi { color: #c3e88d; background: rgba(195, 232, 141, 0.12); border: 0; }
+.highlight .ge { font-style: italic; }
+.highlight .gh,
+.highlight .gu { color: #c792ea; font-weight: 700; }
+.highlight .go { color: #a8a6b3; }
+.highlight .gp { color: #82aaff; }
+.highlight .gt { color: #ffcb6b; }
+
+.css .nt + .nt,
+.css .o,
+.css .o + .nt { color: #a6accd; }
+
+/* --------------------------------------------------------------------------
+   Quotes — body type, a tinted field and a hairline, not a 4px colored bar
+   -------------------------------------------------------------------------- */
+
+blockquote {
+  margin: 1.5rem 0;
+  padding: 1rem 1.25rem;
+  font-family: var(--font-body);   /* was Inconsolata — monospace as costume */
+  font-size: 1rem;
+  color: var(--text);              /* the original said `whtie`, a void rule */
+  background: rgba(167, 139, 250, 0.07);
+  border: 1px solid var(--accent-edge);
+  border-radius: 10px;
+}
+
+blockquote p:last-child { margin-bottom: 0; }
+
+blockquote cite {
+  display: block;
+  margin-top: 0.6rem;
+  font-size: 0.875rem;
+  font-style: normal;
+  color: var(--text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   Media
+   -------------------------------------------------------------------------- */
+
+/* Post images carry their own #1f1f1f matte and are meant to dissolve into
+   the page. No border, no radius, no frame of any kind. */
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 0 1.35rem;
+}
+
+.circularProfilePic {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: url(../images/profile.png) center / cover no-repeat;
+  display: block;
+  margin: 0 auto 1.5rem;
+  border: 1px solid var(--accent-edge);
+}
+
+.videowrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  height: 0;
+  margin-bottom: 1.5rem;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.videowrapper iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Tables — were light-theme: #f9f9f9 rows under #e5e7eb text at 1.18:1
+   -------------------------------------------------------------------------- */
+
+table {
+  width: 100%;
+  margin-bottom: 1.5rem;
+  border-collapse: collapse;
+  font-size: 0.9375rem;
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+th, td {
+  padding: 0.55rem 0.75rem;
+  border: 1px solid var(--rule);
+  text-align: left;
+}
+
+thead th {
+  background: var(--bg-raised);
+  color: #fff;
+  font-family: var(--font-display);
+  font-size: 0.875rem;
+  letter-spacing: 0.01em;
+}
+
+tbody tr:nth-child(odd) td,
+tbody tr:nth-child(odd) th {
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+/* --------------------------------------------------------------------------
+   Messages / callouts
+   -------------------------------------------------------------------------- */
+
+.message {
+  margin-bottom: 1.5rem;
+  padding: 1rem 1.25rem;
+  color: var(--text-dim);
+  background: var(--bg-raised);
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+}
+
+/* --------------------------------------------------------------------------
+   Pagination — was #ccc on #f5f5f5 at hover (1.06:1) in an unloaded PT Sans
+   -------------------------------------------------------------------------- */
+
+.pagination {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin: 3rem 0 0;
+  font-family: var(--font-body);
+  text-align: center;
+}
+
+.pagination-item {
+  display: block;
+  padding: 0.85rem 1rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  text-decoration: none;
+}
+
+a.pagination-item {
+  color: var(--accent);
+  transition: background-color 0.2s var(--ease-out), border-color 0.2s var(--ease-out);
+}
+
+a.pagination-item:hover {
+  background-color: var(--accent-wash);
+  border-color: var(--accent-edge);
+  color: var(--accent-soft);
+  text-decoration: none;
+}
+
+/* --------------------------------------------------------------------------
+   Related posts
+   -------------------------------------------------------------------------- */
+
+.related {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--rule);
+}
+
+.related h2 { margin-top: 0; font-size: 1.25rem; }
+
+.related-posts {
+  padding-left: 0;
+  list-style: none;
+}
+
+.related-posts li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.25rem 0.85rem;
+  margin-bottom: 0.65rem;
+}
+
+/* The date used to live inside the link and inside the heading, so both the
+   accessible name and the heading outline read "Title 20 Jan 2025". It is a
+   sibling now, which is also why it no longer needs a reserved column. */
+.related-date {
+  flex: none;
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.related-posts li a { color: var(--accent); }
+.related-posts li a:hover { color: var(--accent-soft); }
+
+/* --------------------------------------------------------------------------
+   Footer
+   -------------------------------------------------------------------------- */
+
+.site-footer {
+  max-width: 70rem;
+  margin: 4rem auto 0;
+  padding: 2rem 1.5rem 3rem;
+  border-top: 1px solid var(--rule);
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+.site-footer a { color: var(--text-dim); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--rule-strong); }
+.site-footer a:hover { color: var(--accent); text-decoration-color: var(--accent); }
+
+/* These were 19px-tall inline links, under the 24px WCAG 2.5.8 target size.
+   Padding gives them a real hit area; the separators come from the gap. */
+.site-footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 1.25rem;
+  margin: -0.35rem 0;
+}
+
+.site-footer-links a {
+  display: inline-block;
+  padding: 0.35rem 0;
+}
+
+.site-footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  justify-content: space-between;
+}
+
+@media (min-width: 72rem) {
+  .site-footer { padding-left: 2.5rem; padding-right: 2.5rem; }
+}
+
+.ad-unit { margin: 3rem 0; }

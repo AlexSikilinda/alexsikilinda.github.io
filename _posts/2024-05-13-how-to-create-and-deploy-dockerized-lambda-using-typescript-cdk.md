@@ -7,7 +7,7 @@ analytics: true
 tags: .NET AWS DevOps
 ---
 
-<img src='/public/images/2024/awsLambda/awsLambda.png' alt="diagram of AWS stack with lambda scheduled by eventbridge rule"/>
+<img src='/public/images/2024/awsLambda/awsLambda.png' alt="diagram of AWS stack with lambda scheduled by eventbridge rule" width="1176" height="647" decoding="async"/>
 
 An application running periodically based on a schedule with no interface to interact with it directly (often called **background worker**) is quite common in today's architecture design.
 
@@ -46,7 +46,7 @@ dotnet new lambda.image.EmptyFunction
 
 And we should end up with this:
 
-<img src='/public/images/2024/awsLambda/CreatingLambdaFunctionFromTemplate.png' alt="terminal with commands to create lambda function from a template"/>
+<img src='/public/images/2024/awsLambda/CreatingLambdaFunctionFromTemplate.png' alt="terminal with commands to create lambda function from a template" width="1429" height="1294" loading="lazy" decoding="async"/>
 
 There are two new folders created in our root folders, `src` and `test`, with a new .NET project in each one. `Readme.md` located in `src` folder is a good starting point.
 
@@ -152,7 +152,7 @@ public class FunctionTest
 
 We can verify the test passes by running `dotnet test` from the folder with the test project:
 
-<img src='/public/images/2024/awsLambda/AwsTestPassing.png' alt="dotnet unit test passing in terminal"/>
+<img src='/public/images/2024/awsLambda/AwsTestPassing.png' alt="dotnet unit test passing in terminal" width="1450" height="1222" loading="lazy" decoding="async"/>
 
 ## Creating CDK stack
 
